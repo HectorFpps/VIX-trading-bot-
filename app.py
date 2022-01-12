@@ -66,12 +66,12 @@ balanceTrack = []
 for i in range(emaLength2, len(prices)):
 
     if not inPosition:
-        if prices[i] < ema1[i] and prices[i] < ema2[i]:
+        if float(prices[i]) < float(ema1[i]) and float(prices[i]) < float(ema2[i]):
             buyPrice = prices[i]
             inPosition = True
 
     if inPosition:
-        if rsi[i] > sellLimit:
+        if float(rsi[i]) > sellLimit:
             sellPrice = prices[i]
             inPosition = False
             balance = balance*sellPrice/buyPrice
