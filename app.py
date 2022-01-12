@@ -11,14 +11,18 @@ buyLimit = 50
 sellLimit = 65
 emaLength1 = 30
 emaLength2 = 150
+bbands1 = []
+bbands2 = []
+bollLength1 = None
+bollLength2 = None
+std1 = None
+std2 = None
 
 
 #Market data
 df = pd.DataFrame()
 df = df.ta.ticker("^VIX", period=chartPeriod, interval=interval)
 prices = []
-buys = []
-sells = []
 rsi = []
 ema1 = []
 ema2 = []
@@ -50,18 +54,39 @@ def EMA2(ema2, df):
     for i in range(len(df)):
         ema2 += [df[i]]
 
+def bband1(bbands1, df):
+    df = df.ta.bbands(length=bollLength1, std=std1)
+    df = df.values.tolist()
+    
+    for i in range(len(df)):
+        bbands1 += [df[i][2]]
+        
+def bband2(bbands2, df):
+    df = df.ta.bbands(length=bollLength2, std=std2)
+    df = df.values.tolist()
+    
+    for i in range(len(df)):
+        bbands2 += [df[i][2]]
+
 
 st.write("# Volatility Index Trading Bot")
 
 rsiPeriod = int(st.text_input("-Input Desired Rsi Period"))
-sellLimit = int(st.text_input("-Input Desired RSI Sell Limit"))
+buyLimit = int(st.text_input("-Input Desired Buy Limit"))
+sellLimit = int(st.text_input("-Input Desired Sell Limit"))
 emaLength1 = int(st.text_input("-Input Desired EMA1"))
 emaLength2 = int(st.text_input("-Input Desired EMA2"))
+bollLength1 = int(st.text_input("-Input Desired Bollinger Length 1"))
+std1 = int(st.text_input("-Input Desired Standard 1"))
+bollLength2 = int(st.text_input("-Input Desired Bollinger Length 2"))
+std2 = int(st.text_input("-Input Desired Standard 2"))
 
 price(prices, df)
 RSI(rsi, df)
 EMA1(ema1, df)
 EMA2(ema2, df)
+bband1(bbands1, df)
+bband2(bbands2, df)
 
 
 buyPrice = None
@@ -75,13 +100,11 @@ for i in range(len(prices)):
     if not inPosition:
         if float(prices[i]) < float(ema1[i]) and float(prices[i]) < float(ema2[i]) and float(prices[i] < buyLimit):
             buyPrice = prices[i]
-            buys += [buyPrice]
             inPosition = True
 
     if inPosition:
-        if float(rsi[i]) > sellLimit:
+        if float(prices[i]) > float(bbands1[i]) and float(prices[i]) < float(bbands2[i]):
             sellPrice = prices[i]
-            sells += [sellPrice]
             inPosition = False
             balance = balance*sellPrice/buyPrice
 
@@ -91,6 +114,3 @@ st.write("#### Price of VIX")
 st.line_chart(prices)
 st.write("#### Bot Balance")
 st.line_chart(balanceTrack)
-
-for i in range(len(sells)):
-    st.write("Buy at: " + str(buys[i]) + ". Sell at: " + str(sells[i]) + ". Current balance: " + str(balanceTrack[i]))
