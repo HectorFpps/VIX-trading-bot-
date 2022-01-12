@@ -2,6 +2,7 @@ import yfinance as yf
 import pandas as pd
 import pandas_ta as ta
 import streamlit as st
+from datetime import datetime
 
 #User input
 chartPeriod = "600d"
