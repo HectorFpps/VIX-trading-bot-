@@ -5,7 +5,7 @@ import streamlit as st
 
 #User input
 chartPeriod = "30d"
-interval = "15m"
+interval = "1h"
 rsiPeriod = 14
 buyLimit = 50
 sellLimit = 65
@@ -72,7 +72,7 @@ balanceTrack = []
 for i in range(len(prices)):
 
     if not inPosition:
-        if float(prices[i]) < 19:
+        if float(prices[i]) < float(ema1[i]) and float(prices[i]) < float(ema2[i]) and float(prices[i] < buyLimit):
             buyPrice = prices[i]
             inPosition = True
 
