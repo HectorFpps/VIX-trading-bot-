@@ -5,7 +5,7 @@ import streamlit as st
 from datetime import datetime
 
 #User input
-chartPeriod = "900d"
+chartPeriod = "800d"
 interval = "1h"
 rsiPeriod = 14
 buyLimit = 50
