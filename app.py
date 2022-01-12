@@ -103,7 +103,7 @@ for i in range(len(prices)):
             inPosition = True
 
     if inPosition:
-        if float(prices[i]) > float(bbands1[i]) and float(prices[i]) < float(bbands2[i]):
+        if float(prices[i]) > float(bbands1[i]) and float(prices[i]) > float(bbands2[i]):
             sellPrice = prices[i]
             inPosition = False
             balance = balance*sellPrice/buyPrice
