@@ -97,7 +97,7 @@ EMA2(ema2, df)
 buyPrice = None
 sellprice = None
 inPosition = False
-balance = 50000
+balance = 10000
 balanceTrack = []
 
 for i in range(len(prices)):
@@ -116,11 +116,15 @@ for i in range(len(prices)):
             balance = balance*sellPrice/buyPrice
 
     balanceTrack += [balance]
+dayPercent = []
+for i in range(len(balanceTrack)-1):
+    dayPercent += [balance[i+1]/[balance[i]*100-100]
 
 st.write("#### Price of VIX")
 st.line_chart(prices)
 st.write("#### Bot Balance")
 st.line_chart(balanceTrack)
+st.line_chart(dayPercent)
 
 for i in range(len(sells)):
     st.write("Buy Price: " + str(round(buys[i])) + ". Sell price: " + str(round(sells[i])) + " (" + str(round(sells[i]/buys[i]*100-100,1)) + "%)")
