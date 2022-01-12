@@ -10,7 +10,7 @@ rsiPeriod = 14
 buyLimit = 50
 sellLimit = 65
 emaLength1 = 30
-emaLenght2 = 150
+emaLength2 = 150
 
 
 #Market data
