@@ -101,7 +101,7 @@ balanceTrack = []
 for i in range(len(prices)):
 
     if not inPosition:
-        if float(prices[i]) < float(ema1[i]) and float(prices[i]) < float(ema2[i]) and float(prices[i] < buyLimit):
+        if float(prices[i]) < float(ema1[i]) and float(prices[i]) < float(ema2[i]) and float(rsi[i] < buyLimit):
             buyPrice = prices[i]
             buys += [buyPrice]
             inPosition = True
