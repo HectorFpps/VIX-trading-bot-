@@ -93,4 +93,4 @@ st.write("#### Bot Balance")
 st.line_chart(balanceTrack)
 
 for i in range(len(sells)):
-    st.write("Buy at: " + str(buys[i]) ". Sell at: " + str(sells[i]) + ". Current balance: " + str(balanceTrack[i]))
+    st.write("Buy at: " + str(buys[i]) + ". Sell at: " + str(sells[i]) + ". Current balance: " + str(balanceTrack[i]))
