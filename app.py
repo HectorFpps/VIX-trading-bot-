@@ -117,8 +117,9 @@ for i in range(len(prices)):
 
     balanceTrack += [balance]
 dayPercent = []
+
 for i in range(len(balanceTrack)-1):
-    dayPercent += [balance[i+1]/[balance[i]*100-100]
+    dayPercent += [(balance[i+1]/[balance[i]*100-100)]
 
 st.write("#### Price of VIX")
 st.line_chart(prices)
