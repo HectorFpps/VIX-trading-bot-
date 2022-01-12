@@ -18,6 +18,8 @@ bollLength1 = None
 bollLength2 = None
 std1 = None
 std2 = None
+buys = []
+sells = []
 
 
 #Market data
@@ -101,11 +103,13 @@ for i in range(len(prices)):
     if not inPosition:
         if float(prices[i]) < float(ema1[i]) and float(prices[i]) < float(ema2[i]) and float(prices[i] < buyLimit):
             buyPrice = prices[i]
+            buys += [buyPrice]
             inPosition = True
 
     if inPosition:
         if float(prices[i]) > float(bbands1[i]) and float(prices[i]) > float(bbands2[i]):
             sellPrice = prices[i]
+            sells += [sellPrice]
             inPosition = False
             balance = balance*sellPrice/buyPrice
 
@@ -115,3 +119,6 @@ st.write("#### Price of VIX")
 st.line_chart(prices)
 st.write("#### Bot Balance")
 st.line_chart(balanceTrack)
+
+for i in rage(len(sells)):
+    st.write("Buy Price: " + str(round(buys[i])) + ". Sell price: " + str(round(sell[i])) + " " + str(round(sell[i]/buy[i]),1) + str(datetime.now()))
