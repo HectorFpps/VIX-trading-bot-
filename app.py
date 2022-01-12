@@ -58,18 +58,18 @@ def EMA2(ema2, df):
         ema2 += [df[i]]
 
 #def bband1(bbands1, df):
-    df = df.ta.bbands(length=bollLength1, std=std1)
-    df = df.values.tolist()
+    #df = df.ta.bbands(length=bollLength1, std=std1)
+    #df = df.values.tolist()
     
-    for i in range(len(df)):
-        bbands1 += [df[i][2]]
+    #for i in range(len(df)):
+        #bbands1 += [df[i][2]]
         
 #def bband2(bbands2, df):
-    df = df.ta.bbands(length=bollLength2, std=std2)
-    df = df.values.tolist()
+    #df = df.ta.bbands(length=bollLength2, std=std2)
+    #df = df.values.tolist()
     
-    for i in range(len(df)):
-        bbands2 += [df[i][2]]
+    #for i in range(len(df)):
+        #bbands2 += [df[i][2]]
 
 
 st.write("# Volatility Index Trading Bot")
