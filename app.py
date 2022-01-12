@@ -97,7 +97,7 @@ EMA2(ema2, df)
 buyPrice = None
 sellprice = None
 inPosition = False
-balance = 10000
+balance = 50000
 balanceTrack = []
 
 for i in range(len(prices)):
