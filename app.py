@@ -36,11 +36,17 @@ def RSI(rsi, df):
         
 def EMA1(ema1, df):
     df = df.ta.ema(length=emaLength1)
-    ema1 = df.values.tolist()
+    df = df.values.tolist()
+    
+    for i in range(len(df)):
+        ema1 += [df[i]]
 
 def EMA2(ema2, df):
     df = df.ta.ema(length=emaLength2)
-    ema2 = df.values.tolist()
+    df = df.values.tolist()
+    
+    for i in range(len(df)):
+        ema2 += [df[i]]
 
 
 st.write("# Volatility Index Trading Bot")
