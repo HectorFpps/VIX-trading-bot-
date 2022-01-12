@@ -57,14 +57,14 @@ def EMA2(ema2, df):
     for i in range(len(df)):
         ema2 += [df[i]]
 
-def bband1(bbands1, df):
+#def bband1(bbands1, df):
     df = df.ta.bbands(length=bollLength1, std=std1)
     df = df.values.tolist()
     
     for i in range(len(df)):
         bbands1 += [df[i][2]]
         
-def bband2(bbands2, df):
+#def bband2(bbands2, df):
     df = df.ta.bbands(length=bollLength2, std=std2)
     df = df.values.tolist()
     
@@ -75,21 +75,21 @@ def bband2(bbands2, df):
 st.write("# Volatility Index Trading Bot")
 
 rsiPeriod = int(st.text_input("-Input Desired Rsi Period"))
-buyLimit = int(st.text_input("-Input Desired Buy Limit"))
+#buyLimit = int(st.text_input("-Input Desired Buy Limit"))
 sellLimit = int(st.text_input("-Input Desired Sell Limit"))
 emaLength1 = int(st.text_input("-Input Desired EMA1"))
 emaLength2 = int(st.text_input("-Input Desired EMA2"))
-bollLength1 = int(st.text_input("-Input Desired Bollinger Length 1"))
-std1 = int(st.text_input("-Input Desired Standard 1"))
-bollLength2 = int(st.text_input("-Input Desired Bollinger Length 2"))
-std2 = int(st.text_input("-Input Desired Standard 2"))
+#bollLength1 = int(st.text_input("-Input Desired Bollinger Length 1"))
+#std1 = int(st.text_input("-Input Desired Standard 1"))
+#bollLength2 = int(st.text_input("-Input Desired Bollinger Length 2"))
+#std2 = int(st.text_input("-Input Desired Standard 2"))
 
 price(prices, df)
 RSI(rsi, df)
 EMA1(ema1, df)
 EMA2(ema2, df)
-bband1(bbands1, df)
-bband2(bbands2, df)
+#bband1(bbands1, df)
+#bband2(bbands2, df)
 
 
 buyPrice = None
@@ -107,7 +107,7 @@ for i in range(len(prices)):
             inPosition = True
 
     if inPosition:
-        if float(prices[i]) > float(bbands1[i]) and float(prices[i]) > float(bbands2[i]):
+        if rsi[i] > sellLimit:
             sellPrice = prices[i]
             sells += [sellPrice]
             inPosition = False
