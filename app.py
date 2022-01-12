@@ -40,7 +40,7 @@ def EMA1(ema1, df):
 
 def EMA2(ema2, df):
     df = df.ta.ema(length=emaLength2)
-    ema2 = df.values.tolist(
+    ema2 = df.values.tolist()
 
 
 st.write("# Volatility Index Trading Bot")
