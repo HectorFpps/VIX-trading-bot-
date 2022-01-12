@@ -120,5 +120,6 @@ st.line_chart(prices)
 st.write("#### Bot Balance")
 st.line_chart(balanceTrack)
 
+st.write(len(sells))
 for i in rage(len(sells)):
     st.write("Buy Price: " + str(round(buys[i])) + ". Sell price: " + str(round(sell[i])) + " " + str(round(sell[i]/buy[i]),1) + str(datetime.now()))
