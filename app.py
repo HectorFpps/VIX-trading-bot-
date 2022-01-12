@@ -63,7 +63,7 @@ inPosition = False
 balance = 10000
 balanceTrack = []
 
-for i in range(len(ema2), len(prices)):
+for i in range(emaLength2, len(prices)):
 
     if not inPosition:
         if prices[i] < ema1[i] and prices[i] < ema2[i]:
