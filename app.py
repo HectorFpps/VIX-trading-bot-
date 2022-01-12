@@ -72,7 +72,7 @@ balanceTrack = []
 for i in range(len(prices)):
 
     if not inPosition:
-        if float(prices[i]) < 19:
+        if float(prices[i]) < 20:
             buyPrice = prices[i]
             inPosition = True
 
