@@ -5,7 +5,7 @@ import streamlit as st
 
 #User input
 chartPeriod = "600d"
-interval = "1h"
+interval = "1d"
 rsiPeriod = 14
 buyLimit = 50
 sellLimit = 65
