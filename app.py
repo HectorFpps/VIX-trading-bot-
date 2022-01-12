@@ -9,6 +9,9 @@ interval = "1h"
 rsiPeriod = 14
 buyLimit = 50
 sellLimit = 65
+emaLength1 = 30
+emaLenght2 = 150
+
 
 #Market data
 df = pd.DataFrame()
@@ -51,6 +54,8 @@ st.write("# Volatility Index Trading Bot")
 rsiPeriod = int(st.text_input("-Input Desired Rsi Period"))
 buyLimit = int(st.text_input("-Input Desired Buy Limit"))
 sellLimit = int(st.text_input("-Input Desired Sell Limit"))
+emaLength1 = int(st.text_input("-Input Desired EMA1"))
+emaLength2 = int(st.text_input("-Input Desired EMA2"))
 
 price(prices, df)
 RSI(rsi, df)
