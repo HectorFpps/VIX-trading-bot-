@@ -17,6 +17,8 @@ emaLength2 = 150
 df = pd.DataFrame()
 df = df.ta.ticker("^VIX", period=chartPeriod, interval=interval)
 prices = []
+buys = []
+sells = []
 rsi = []
 ema1 = []
 ema2 = []
@@ -52,8 +54,7 @@ def EMA2(ema2, df):
 st.write("# Volatility Index Trading Bot")
 
 rsiPeriod = int(st.text_input("-Input Desired Rsi Period"))
-buyLimit = int(st.text_input("-Input Desired Buy Limit"))
-sellLimit = int(st.text_input("-Input Desired Sell Limit"))
+sellLimit = int(st.text_input("-Input Desired RSI Sell Limit"))
 emaLength1 = int(st.text_input("-Input Desired EMA1"))
 emaLength2 = int(st.text_input("-Input Desired EMA2"))
 
@@ -74,11 +75,13 @@ for i in range(len(prices)):
     if not inPosition:
         if float(prices[i]) < float(ema1[i]) and float(prices[i]) < float(ema2[i]) and float(prices[i] < buyLimit):
             buyPrice = prices[i]
+            buys += [buyPrice]
             inPosition = True
 
     if inPosition:
         if float(rsi[i]) > sellLimit:
             sellPrice = prices[i]
+            sells += [sellPrice]
             inPosition = False
             balance = balance*sellPrice/buyPrice
 
@@ -88,3 +91,6 @@ st.write("#### Price of VIX")
 st.line_chart(prices)
 st.write("#### Bot Balance")
 st.line_chart(balanceTrack)
+
+for i in range(len(sells)):
+    st.write("Buy at: " + str(buys[i]) ". Sell at: " + str(sells[i]) + ". Current balance: " + str(balanceTrack[i]))
