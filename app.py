@@ -63,5 +63,5 @@ for i in range(len(prices)):
 
 st.write("#### Price of VIX")
 st.line_chart(prices)
-st.wrtie("#### Bot Balance")
+st.write("#### Bot Balance")
 st.line_chart(balanceTrack)
