@@ -4,7 +4,7 @@ import pandas_ta as ta
 import streamlit as st
 
 #User input
-chartPeriod = "1mo"
+chartPeriod = "100d"
 interval = "1h"
 rsiPeriod = 14
 buyLimit = 50
