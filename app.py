@@ -61,28 +61,28 @@ def RSI(rsi, df):
     for i in range(len(df)):
         rsi += [df[i][0]]
         
-def EMA1B(ema1, df):
+def EMA1B(ema1b, df):
     df = df.ta.ema(length=ema1Buy)
     df = df.values.tolist()
     
     for i in range(len(df)):
         ema1b += [df[i]]
 
-def EMA2B(ema2, df):
+def EMA2B(ema2b, df):
     df = df.ta.ema(length=ema2Buy)
     df = df.values.tolist()
     
     for i in range(len(df)):
         ema2b += [df[i]]
         
-def EMA1S(ema3, df):
+def EMA1S(ema1s, df):
     df = df.ta.ema(length=ema1Sell)
     df = df.values.tolist()
     
     for i in range(len(df)):
         ema1s += [df[i]]
 
-def EMA2S(ema4, df):
+def EMA2S(ema2s, df):
     df = df.ta.ema(length=ema2Sell)
     df = df.values.tolist()
     
@@ -92,10 +92,16 @@ def EMA2S(ema4, df):
         
         
 def calculate():
+    if not useRsiBuy:
+        rsiBuy = 100
+    if not useRsiSell:
+        rsiSell = 0
     price(prices, df)
-    #RSI(rsi, df)
-#EMA1(ema1, df)
-#EMA2(ema2, df)
+    RSI(rsi, df)
+    EMA1B(ema1, df)
+    EMA2B(ema1, df)
+    EMA1S(ema1, df)
+    EMA2S(ema1, df)
 #--------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -147,7 +153,10 @@ if(useRsiBuy or useRsiSell):
     rsiPeriod = st.number_input("What is the desired rsi period for the buy and sell rsi", value = 14, step = 2)
 
 
+calculateButton = st.button("Calculate")
 
+if(calculateButton):
+    calculate()
 
 
 
