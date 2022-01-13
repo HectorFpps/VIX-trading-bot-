@@ -152,7 +152,7 @@ def trade():
                 inPosition = True
 
         if inPosition:
-            if rsi[i] > rsiSell and prices[i] > ema1s+sellOverNumber1 and prices[i] > ema2s+sellOverNumber2:
+            if rsi[i] > rsiSell and prices[i] > ema1s[i]+sellOverNumber1 and prices[i] > ema2s+sellOverNumber2:
                 sellPrice = prices[i]
                 sells += [sellPrice]
                 inPosition = False
