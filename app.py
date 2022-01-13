@@ -122,8 +122,8 @@ def calculate():
     
     
 def trade():
-calculate()
-st.write(price)
+    calculate()
+    st.write(price)
 #buyPrice = None
 #sellprice = None
 #inPosition = False
