@@ -238,6 +238,6 @@ calculateButton = st.button("Calculate")
 
 if(calculateButton):
     trade()
-    st.line_chart(prices)
+    st.line_chart(pricesInRange)
     st.line_chart(balanceTrack)
     st.write(balanceAfterSells)
