@@ -41,6 +41,7 @@ ema1s = []
 ema2s = []
 balanceTrack = []
 balanceAfterSells = []
+df = pd.DataFrame()
 
 def price(prices, df):
     df = df.values.tolist()
@@ -225,9 +226,7 @@ if(useRsiBuy or useRsiSell):
     st.write("### Necesari data")
     rsiPeriod = st.number_input("What is the desired rsi period for the buy and sell rsi", value = 14, step = 2)
 
-df = pd.DataFrame()
 df = df.ta.ticker(ticker, period=chartPeriod, interval=interval)
-
 calculateButton = st.button("Calculate")
 
 if(calculateButton):
