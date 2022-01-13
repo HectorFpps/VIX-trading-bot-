@@ -99,11 +99,11 @@ if(useRsiSell or useRsiBuy):
         
 st.write("EMA")
 useEmaBuy = st.checkbox('Use ema for buy condition')
-    if(useEmaBuy):
-        useTwoEmaBuy = st.checkbox('Use two ema for buy condition')
-        ema1Buy = int(st.text_input("Desired ema condition to buy"))
-        if(useTwoEmaBuy):
-            ema2Buy = int(st.text_input("Desired second ema condition to buy"))
+if(useEmaBuy):
+    useTwoEmaBuy = st.checkbox('Use two ema for buy condition')
+    ema1Buy = int(st.text_input("Desired ema condition to buy"))
+    if(useTwoEmaBuy):
+        ema2Buy = int(st.text_input("Desired second ema condition to buy"))
 
 
 ema1 = int(st.text_input("-Input Desired EMA1"))
