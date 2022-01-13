@@ -90,6 +90,12 @@ def EMA2S(ema4, df):
         ema2s += [df[i]]
         
         
+        
+def calculate():
+    price(prices, df)
+    #RSI(rsi, df)
+#EMA1(ema1, df)
+#EMA2(ema2, df)
 #--------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -143,15 +149,7 @@ if(useRsiBuy or useRsiSell):
 
 
 
-#ema1 = int(st.text_input("-Input Desired EMA1"))
-#ema2 = int(st.text_input("-Input Desired EMA2"))
 
-#price(prices, df)
-#RSI(rsi, df)
-#EMA1(ema1, df)
-#EMA2(ema2, df)
-#bband1(bbands1, df)
-#bband2(bbands2, df)
 
 
 #buyPrice = None
