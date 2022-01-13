@@ -198,7 +198,7 @@ if "m" in interval:
 else:
     testingRange *= multi
 
-  
+st.write(multi)
 
 st.write("### Buy Condition")
 
