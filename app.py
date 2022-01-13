@@ -87,18 +87,11 @@ def EMA2(ema2, df):
 
 st.write("# Volatility Index Trading Bot")
 
-st.write("RSI")
+st.write("Buy Condition")
+
 useRsiBuy = st.checkbox('Use rsi for buy condition')
-useRsiSell = st.checkbox('Use rsi for sell condition')
-if(useRsiSell or useRsiBuy):
-    rsiPeriod = int(st.text_input("What is the desired rsi period"))
-    if(useRsiBuy):
-        rsiBuy = int(st.text_input("Buy when rsi is under: "))
-    if(useRsiSell):
-        rsiSell = int(st.text_input("Sell when rsi is over: "))
-        
-st.write("EMA")
 useEmaBuy = st.checkbox('Use ema for buy condition')
+
 if(useEmaBuy):
     useTwoEmaBuy = st.checkbox('Use two ema for buy condition')
     ema1Buy = int(st.text_input("Desired ema condition to buy"))
@@ -106,8 +99,26 @@ if(useEmaBuy):
         ema2Buy = int(st.text_input("Desired second ema condition to buy"))
 
 
-ema1 = int(st.text_input("-Input Desired EMA1"))
-ema2 = int(st.text_input("-Input Desired EMA2"))
+
+
+   
+st.write("Sell Condition")
+
+useRsiSell = st.checkbox('Use rsi for sell condition')
+useEmaSell = st.checkbox('Use rsi for sell condition')
+
+if(useRsiSell or useRsiBuy):
+    rsiPeriod = int(st.text_input("What is the desired rsi period"))
+    if(useRsiBuy):
+        rsiBuy = int(st.text_input("Buy when rsi is under: "))
+    if(useRsiSell):
+        rsiSell = int(st.text_input("Sell when rsi is over: "))
+
+
+
+
+#ema1 = int(st.text_input("-Input Desired EMA1"))
+#ema2 = int(st.text_input("-Input Desired EMA2"))
 #bollLength1 = int(st.text_input("-Input Desired Bollinger Length 1"))
 #std1 = int(st.text_input("-Input Desired Standard 1"))
 #bollLength2 = int(st.text_input("-Input Desired Bollinger Length 2"))
