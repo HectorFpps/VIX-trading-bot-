@@ -247,4 +247,4 @@ if(calculateButton):
     st.line_chart(pricesInRange)
     st.line_chart(balanceTrack)
     
-    st.write(prices[:100])
+    st.write(prices[:-100])
