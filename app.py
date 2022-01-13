@@ -138,7 +138,9 @@ def trade():
     global rsiSell
     
     calculate()
-    st.write(ema2b)
+    for i in range(len(ema2b)):
+        st.write(ema2b[i])
+    
 #buyPrice = None
 #sellprice = None
 #inPosition = False
