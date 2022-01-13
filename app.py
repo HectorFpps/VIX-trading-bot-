@@ -33,8 +33,6 @@ buyUnderNumber1 = 0
 buyUnderNumber2 = 0
 
 #Market data
-df = pd.DataFrame()
-df = df.ta.ticker(ticker, period=chartPeriod, interval=interval)
 prices = []
 rsi = []
 ema1b = []
@@ -227,6 +225,8 @@ if(useRsiBuy or useRsiSell):
     st.write("### Necesari data")
     rsiPeriod = st.number_input("What is the desired rsi period for the buy and sell rsi", value = 14, step = 2)
 
+df = pd.DataFrame()
+df = df.ta.ticker(ticker, period=chartPeriod, interval=interval)
 
 calculateButton = st.button("Calculate")
 
