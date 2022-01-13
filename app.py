@@ -247,5 +247,6 @@ if(calculateButton):
     trade()
     st.line_chart(pricesInRange)
     st.line_chart(balanceTrack)
-    for i in range(len(priceInRange)):
+    
+    for i in range(len(pricesInRange)):
         st.write(priceInRange[i])
