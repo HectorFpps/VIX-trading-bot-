@@ -112,7 +112,7 @@ def calculate():
             EMA2B(ema2b, df)
         else:
             for i in range(len(prices)):
-                ema2b[i] = [1000000]
+                ema2b += [1000000]
                 
     else:
         for i in range(len(ema1b)):
