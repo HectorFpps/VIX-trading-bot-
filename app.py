@@ -86,9 +86,9 @@ def EMA2(ema2, df):
         #bbands2 += [df[i][2]]
 
 
-st.write("# Volatility Index Trading Bot")
+st.write("# Personal trading bot")
 
-st.write("What ticker do you want to trade: ")
+st.write("### What ticker do you want to trade: ")
 ticker = st.text_input("Ticker of yahoo finance: ", value = "^VIX")
 
 st.write("### Buy Condition")
