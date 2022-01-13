@@ -128,4 +128,4 @@ st.line_chart(balanceTrack)
 st.line_chart(dayPercent)
 
 for i in range(len(sells)):
-    st.write("Buy Price: " + str(round(buys[i])) + ". Sell price: " + str(round(sells[i])) + " (" + str(round(sells[i]/buys[i]*100-100,1)) + "%)")
+    st.write("Buy Price: " + str(round(buys[i])) + ". Sell price: " + str(round(sells[i])) + " (" + str(round(sells[i]/buys[i]*100-100,1)) + "%) Balance: " + str(balanceTrack[i]) )
