@@ -178,11 +178,11 @@ ticker = st.text_input("Ticker of yahoo finance: ", value = "^VIX")
 
 interval = st.selectbox(
      'What candlestick inverval?',
-     ('1m', '2m', '5m','15m','30m','60m','90m','1h','1d','5d','1wk','1mo','3mo'))
+     ('1m', '2m', '5m','15m','30m','60m','90m','1h','1d','5d','1wk','1mo','3mo', value = "1h"))
 
 chartPeriod = st.selectbox(
      'How many days shoud the test last?',
-     ('1h','2h','12h','1d','2d', '5d','15d','30d','60d','100d','200d','300d','400d','600d','800d'))
+     ('1h','2h','12h','1d','2d', '5d','15d','30d','60d','100d','200d','300d','400d','600d','800d', value = "600d"))
 
 st.write("### Buy Condition")
 
