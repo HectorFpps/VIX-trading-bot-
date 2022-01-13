@@ -99,6 +99,7 @@ def calculate():
     global ema1s
     global ema2s
     
+    
     if not useRsiBuy:
         rsiBuy = 100
     if not useRsiSell:
@@ -112,6 +113,7 @@ def calculate():
         else:
             for i in range(len(ema2b)):
                 ema2b[i] = [1000000]
+                st.write("tonto")
     else:
         for i in range(len(ema1b)):
             ema1b[i] = [1000000]
