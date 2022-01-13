@@ -146,6 +146,7 @@ def trade():
     global balanceTrack
     global balanceAfterSells
     global pricesInRange
+    global testingRange
     
     calculate()
     
