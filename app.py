@@ -33,8 +33,14 @@ useEmaBuy = False
 useEmaSell = False
 useTwoEmaBuy = False
 useTwoEmaSewll = False
-sellOverNumber = 0
-sellUnderNumber = 0
+useSellOverNumber1 = False
+useSellOverNumber2 = False
+useBuyUnderNumber1 = False
+useBuyUnderNumber2 = False
+sellOverNumber1 = 0
+sellOverNumber2 = 0
+buyUnderNumber1 = 0
+buyUnderNumber2 = 0
 
 #Market data
 df = pd.DataFrame()
@@ -70,20 +76,9 @@ def EMA2(ema2, df):
     
     for i in range(len(df)):
         ema2 += [df[i]]
-
-#def bband1(bbands1, df):
-    #df = df.ta.bbands(length=bollLength1, std=std1)
-    #df = df.values.tolist()
-    
-    #for i in range(len(df)):
-        #bbands1 += [df[i][2]]
         
-#def bband2(bbands2, df):
-    #df = df.ta.bbands(length=bollLength2, std=std2)
-    #df = df.values.tolist()
-    
-    #for i in range(len(df)):
-        #bbands2 += [df[i][2]]
+        
+#--------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 st.write("# Personal trading bot")
@@ -100,8 +95,12 @@ if(useRsiBuy):
 useEmaBuy = st.checkbox('Use ema for buy condition')
 if(useEmaBuy):
     ema1Buy = st.number_input("Buy when over ema of what period: " , value = 10, step = 10)
+    useBuyUnderNumber1 = st.checkbox("Buy under ema minus a number")
+    if(useBuyUnderNumber1):
+        buyUnderNumber1 = st.number_input("Buy under ema minus", value = 2, step = 1)
     useTwoEmaBuy = st.checkbox('Use two ema for buy condition')
     if(useTwoEmaBuy):
+        useBuyUnderNumber2 = st.checkbox("Buy under ema minus a number")
         ema2Buy = st.number_input("Buy when under the " + str(ema1Buy) + " period ema and what second period: ", value = 200, step = 10)
         
 if(useRsiBuy and useEmaBuy):
@@ -118,6 +117,9 @@ if(useRsiSell):
 useEmaSell = st.checkbox('Use ema for sell condition')
 if(useEmaSell):
     ema1Sell = st.number_input("Sell when over ema of what period: ", value = 200, step = 10)
+    useBuyUnderNumber2 = st.checkbox("Sell over ema plus a number")
+    if(useBuyUnderNumber2):
+        buyUnderNumber2 = st.number_input("Buy under ema minus", value = 2, step = 1)
     useTwoEmaSell = st.checkbox('Use two ema for sell condition')
     if(useTwoEmaSell):
         ema2Sell = st.number_input("Sell when under the " + str(ema1Sell) + " period ema and what second period: ", value = 400, step = 10)
