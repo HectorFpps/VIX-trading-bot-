@@ -111,7 +111,7 @@ def calculate():
         if useTwoEmaBuy:
             EMA2B(ema2b, df)
         else:
-            for i in range(len(ema2b)):
+            for i in range(len(prices)):
                 ema2b[i] = [1000000]
                 print(ema2b[i])
                 
