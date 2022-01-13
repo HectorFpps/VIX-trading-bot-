@@ -202,7 +202,7 @@ if "m" in interval:
     testingRange *= (24*multi)
 else:
 
-    for c in intercal: 
+    for c in interval: 
         if c != "d":
             d += c
     multi = int(d)
