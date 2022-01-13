@@ -46,10 +46,13 @@ balanceAfterSells = []
 df = pd.DataFrame()
 df = df.ta.ticker(ticker, period=chartPeriod, interval=interval)
 
+st.write(df)
+
 def price(prices, df):
     df = df.values.tolist()
     for i in range(len(df)):
         prices += [df[i][3]]
+        
 
 def RSI(rsi, df):
     df = df.ta.rsi(length=rsiPeriod).to_frame()
