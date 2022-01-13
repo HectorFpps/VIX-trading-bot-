@@ -90,7 +90,6 @@ def EMA2S(ema2s, df):
         ema2s += [df[i]]
         
         
-        
 def calculate():
     if not useRsiBuy:
         rsiBuy = 100
@@ -98,10 +97,57 @@ def calculate():
         rsiSell = 0
     price(prices, df)
     RSI(rsi, df)
-    EMA1B(ema1b, df)
-    EMA2B(ema2b, df)
-    EMA1S(ema1s, df)
-    EMA2S(ema2s, df)
+    if useEmaBuy:
+        EMA1B(ema1b, df)
+        if useTwoEmaBuy:
+            EMA2B(ema2b, df)
+        else:
+            for i in range(len(ema2b)):
+                ema2b[i] = [1000000]
+    else:
+        for i in range(len(ema1b))
+            ema1b[i] = [1000000]
+    
+    
+    if useEmaSell:
+        EMA1S(ema1s, df)
+        if useTwoEmaSell:
+            EMA2S(ema2s, df)
+        else:
+            for i in range(len(ema2s)):
+                ema2s[i] = [1000000]
+    else:
+        for i in range(len(ema1s))
+            ema1s[i] = [1000000]
+    
+    
+def trade():
+calculate()
+st.write(price)
+#buyPrice = None
+#sellprice = None
+#inPosition = False
+#balance = 10000
+#balanceTrack = []
+
+#for i in range(len(prices)):
+
+#    if not inPosition:
+#        if rsi[i] < rsiBuy and :
+#            buyPrice = prices[i]
+#            buys += [buyPrice]
+#            inPosition = True
+
+#    if inPosition:
+#        if rsi[i] > sellLimit:
+#            sellPrice = prices[i]
+#            sells += [sellPrice]
+#            inPosition = False
+#            balance = balance*sellPrice/buyPrice
+#            balanceTrackAfterSells += [balance]
+
+#    balanceTrack += [balance]
+    
 #--------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -156,7 +202,7 @@ if(useRsiBuy or useRsiSell):
 calculateButton = st.button("Calculate")
 
 if(calculateButton):
-    calculate()
+    trade()
 
 
 
