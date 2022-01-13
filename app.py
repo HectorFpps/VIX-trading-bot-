@@ -108,13 +108,11 @@ def calculate():
     RSI(rsi, df)
     if useEmaBuy:
         EMA1B(ema1b, df)
-        EMA2B(ema2b, df) ###
         if useTwoEmaBuy:
             EMA2B(ema2b, df)
         else:
-            for i in range(len(ema2b)):
+            for i in range(len(prices)):
                 ema2b[i] = [1000000]
-                print(ema2b[i])
                 
     else:
         for i in range(len(ema1b)):
