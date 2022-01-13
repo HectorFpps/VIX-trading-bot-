@@ -143,6 +143,7 @@ def trade():
     global sellUnderNumber1
     global sellUnderNumber2
     global balanceTrack
+    global balanceAfterSells
     
     calculate()
     
