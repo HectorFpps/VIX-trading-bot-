@@ -222,44 +222,5 @@ calculateButton = st.button("Calculate")
 
 if(calculateButton):
     trade()
-
-
-
-
-#buyPrice = None
-#sellprice = None
-#inPosition = False
-#balance = 10000
-#balanceTrack = []
-#balanceTrackAfterSells = []
-
-#for i in range(len(prices)):
-
-#    if not inPosition:
-#        if float(prices[i]) < float(ema1[i]) and float(prices[i]) < float(ema2[i]) and float(rsi[i] < buyLimit):
-#            buyPrice = prices[i]
-#            buys += [buyPrice]
-#            inPosition = True
-
-#    if inPosition:
-#        if rsi[i] > sellLimit:
-#            sellPrice = prices[i]
-#            sells += [sellPrice]
-#            inPosition = False
-#            balance = balance*sellPrice/buyPrice
-#            balanceTrackAfterSells += [balance]
-
-#    balanceTrack += [balance]
-#dayPercent = []
-
-#for i in range(len(balanceTrack)-1):
-#    dayPercent += [balanceTrack[i+1]/balanceTrack[i]*100-100]
-
-#st.write("#### Price of VIX")
-#st.line_chart(prices)
-#st.write("#### Bot Balance")
-#st.line_chart(balanceTrack)
-#st.line_chart(dayPercent)
-
-#for i in range(len(sells)):
-#    st.write("Buy Price: " + str(round(buys[i])) + ". Sell price: " + str(round(sells[i])) + " (" + str(round(sells[i]/buys[i]*100-100,1)) + "%) Balance: " + str(round(balanceTrackAfterSells[i])))
+    st.line_chart(prices)
+    st.line_chart(balanceTrack)
