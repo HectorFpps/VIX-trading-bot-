@@ -115,8 +115,8 @@ def calculate():
                 ema2b += [1000000]
                 
     else:
-        for i in range(len(ema1b)):
-            ema1b[i] = [1000000]
+        for i in range(len(prices)):
+            ema1b += [1000000]
     
     
     if useEmaSell:
@@ -124,11 +124,11 @@ def calculate():
         if useTwoEmaSell:
             EMA2S(ema2s, df)
         else:
-            for i in range(len(ema2s)):
-                ema2s[i] = [1000000]
+            for i in range(len(prices)):
+                ema2s += [1000000]
     else:
-        for i in range(len(ema1s)):
-            ema1s[i] = [1000000]
+        for i in range(len(prices)):
+            ema1s += [1000000]
     
     
 def trade():
@@ -136,8 +136,7 @@ def trade():
     global rsiSell
     
     calculate()
-    for i in range(len(ema2b)):
-        st.write(ema2b[i])
+    print(ema1b, ema2b, ema1s, ema2s)
     
 #buyPrice = None
 #sellprice = None
