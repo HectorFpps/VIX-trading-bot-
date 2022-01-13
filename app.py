@@ -154,7 +154,7 @@ def trade():
     sellprice = None
     inPosition = False
     balance = 10000
-    
+    st.write("# testingRange: " + str(testingRange))
     for i in range(len(prices)-testingRange,len(prices)):
         pricesInRange += [prices[i]]
         if not inPosition:
