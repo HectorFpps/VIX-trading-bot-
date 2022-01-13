@@ -123,7 +123,7 @@ def calculate():
     
 def trade():
     calculate()
-    st.write(prices)
+    st.write(rsi)
 #buyPrice = None
 #sellprice = None
 #inPosition = False
