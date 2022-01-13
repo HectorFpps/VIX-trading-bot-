@@ -87,7 +87,7 @@ def EMA2(ema2, df):
 
 st.write("# Volatility Index Trading Bot")
 
-st.write("Buy Condition")
+st.write("### Buy Condition")
 
 useRsiBuy = st.checkbox('Use rsi for buy condition')
 useEmaBuy = st.checkbox('Use ema for buy condition')
@@ -101,7 +101,7 @@ if(useEmaBuy):
     if(useTwoEmaBuy):
         ema2Buy = int(st.text_input("Buy when ema is under " + str(ema1Buy) + " and second ema is under: "))
 
-st.write("Sell Condition")
+st.write("### Sell Condition")
 
 useRsiSell = st.checkbox('Use rsi for sell condition')
 useEmaSell = st.checkbox('Use rsi for sell condition')
