@@ -135,6 +135,7 @@ def trade():
     global ema2s
     global prices
     global buys
+    global sells
     global buyUnderNumber1
     global buyUnderNumber2
     global sellUnderNumber1
