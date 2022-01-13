@@ -111,9 +111,9 @@ def calculate():
         if useTwoEmaBuy:
             EMA2B(ema2b, df)
         else:
-            st.write("tonto")
             for i in range(len(ema2b)):
                 ema2b[i] = [1000000]
+                print(ema2b[i])
                 
     else:
         for i in range(len(ema1b)):
