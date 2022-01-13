@@ -41,6 +41,8 @@ ema1b = []
 ema2b = []
 ema1s = []
 ema2s = []
+balanceTrack = []
+balanceAfterSells = []
 
 def price(prices, df):
     df = df.values.tolist()
@@ -140,7 +142,7 @@ def trade():
     global buyUnderNumber2
     global sellUnderNumber1
     global sellUnderNumber2
-    
+    global balanceTrack
     
     calculate()
     
@@ -148,7 +150,6 @@ def trade():
     sellprice = None
     inPosition = False
     balance = 10000
-    balanceTrack = []
 
     for i in range(len(prices)):
         if not inPosition:
@@ -163,7 +164,7 @@ def trade():
                 sells += [sellPrice]
                 inPosition = False
                 balance = balance*sellPrice/buyPrice
-                st.write(balance)
+                balanceAfterSells += [balance]
 
         balanceTrack += [balance]
     
@@ -224,3 +225,4 @@ if(calculateButton):
     trade()
     st.line_chart(prices)
     st.line_chart(balanceTrack)
+    st.write(balanceAfterSells)
