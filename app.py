@@ -197,14 +197,14 @@ d = ""
 if "m" in interval:
     for c in interval:
         if c != "m":
-            d += c  
+            d += [c]  
     multi = int(d)
     testingRange *= (24*multi)
 else:
 
     for c in interval: 
         if c != "d":
-            d += c
+            d += [c]
     multi = int(d)
     testingRange *= multi
             
