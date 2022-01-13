@@ -16,12 +16,6 @@ ema1Buy = 30
 ema2Buy = 150
 ema1Sell = 30
 ema2Sell = 150
-bbands1 = []
-bbands2 = []
-bollLength1 = None
-bollLength2 = None
-std1 = None
-std2 = None
 buys = []
 sells = []
 ticker = "^VIX"
@@ -139,33 +133,35 @@ def trade():
     global ema2b
     global ema1s
     global ema2s
+    global prices
+    global buys
+    global 
     
     calculate()
-    st.write(ema1b,ema2b,ema1s,ema2s)
     
-#buyPrice = None
-#sellprice = None
-#inPosition = False
-#balance = 10000
-#balanceTrack = []
+    buyPrice = None
+    sellprice = None
+    inPosition = False
+    balance = 10000
+    balanceTrack = []
 
-#for i in range(len(prices)):
+    for i in range(len(prices)):
+        if not inPosition:
+            if rsi[i] < rsiBuy and prices[i]<ema1b[i]-buyUnderNumber1 and prices[i] < ema2b[i]-buyUnderNumber2:
+                buyPrice = prices[i]
+                buys += [buyPrice]
+                inPosition = True
 
-#    if not inPosition:
-#        if rsi[i] < rsiBuy and :
-#            buyPrice = prices[i]
-#            buys += [buyPrice]
-#            inPosition = True
+        if inPosition:
+            if rsi[i] > rsiSell and prices[i] > ema1s+sellOverNumber1 and prices[i] > ema2s+sellOverNumber2:
+                sellPrice = prices[i]
+                sells += [sellPrice]
+                inPosition = False
+                balance = balance*sellPrice/buyPrice
+                balanceTrackAfterSells += [balance]
 
-#    if inPosition:
-#        if rsi[i] > sellLimit:
-#            sellPrice = prices[i]
-#            sells += [sellPrice]
-#            inPosition = False
-#            balance = balance*sellPrice/buyPrice
-#            balanceTrackAfterSells += [balance]
-
-#    balanceTrack += [balance]
+        balanceTrack += [balance]
+        st.write(balance)
     
 #--------------------------------------------------------------------------------------------------------------------------------------------------
 
