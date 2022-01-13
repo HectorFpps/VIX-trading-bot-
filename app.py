@@ -89,7 +89,7 @@ def EMA2(ema2, df):
 st.write("# Volatility Index Trading Bot")
 
 st.write("What ticker do you want to trade: ")
-ticker = st.text_input("Ticker of yahoo finance: ")
+ticker = st.text_input("Ticker of yahoo finance: ", value = "^VIX")
 
 st.write("### Buy Condition")
 
@@ -99,10 +99,10 @@ if(useRsiBuy):
     
 useEmaBuy = st.checkbox('Use ema for buy condition')
 if(useEmaBuy):
-    ema1Buy = st.number_input("Buy when over ema of what period: ")
+    ema1Buy = st.number_input("Buy when over ema of what period: " , value = 10, step = 10)
     useTwoEmaBuy = st.checkbox('Use two ema for buy condition')
     if(useTwoEmaBuy):
-        ema2Buy = st.number_input("Buy when under the " + str(ema1Buy) + " period ema and what second period: ")
+        ema2Buy = st.number_input("Buy when under the " + str(ema1Buy) + " period ema and what second period: ", value = 200, step = 10)
 
 
         
@@ -114,10 +114,10 @@ if(useRsiSell):
     
 useEmaSell = st.checkbox('Use ema for sell condition')
 if(useEmaSell):
-    ema1Sell = st.number_input("Sell when over ema of what period: ")
+    ema1Sell = st.number_input("Sell when over ema of what period: ", value = 200, step = 10)
     useTwoEmaSell = st.checkbox('Use two ema for sell condition')
     if(useTwoEmaSell):
-        ema2Sell = st.number_input("Sell when under the " + str(ema1Sell) + " period ema and what second period: ")
+        ema2Sell = st.number_input("Sell when under the " + str(ema1Sell) + " period ema and what second period: ", value = 400, step = 10)
 
 if(useRsiBuy or useRsiSell):
     st.write("### Necesari data")
