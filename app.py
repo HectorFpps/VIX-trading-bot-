@@ -134,6 +134,10 @@ def calculate():
 def trade():
     global rsiBuy
     global rsiSell
+    global ema1b
+    global ema2b
+    global ema1s
+    global ema2s
     
     calculate()
     print(ema1b, ema2b, ema1s, ema2s)
