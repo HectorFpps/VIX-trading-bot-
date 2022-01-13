@@ -95,7 +95,7 @@ if(useEmaBuy):
     useTwoEmaBuy = st.checkbox('Use two ema for buy condition')
     if(useTwoEmaBuy):
         ema2Buy = st.number_input("Buy when under the " + str(ema1Buy) + " period ema and what second period: ", value = 200, step = 10)
-        buyUnderNumber2 = st.number_input("Buy under ema minus: ", value = 0, step = 1)
+        buyUnderNumber2 = st.number_input("Buy under ema2 minus: ", value = 0, step = 1)
         
 if(useRsiBuy and useEmaBuy):
     st.warning("Please keep in mind it will only buy if both conditions are satidfide")
@@ -115,7 +115,7 @@ if(useEmaSell):
     useTwoEmaSell = st.checkbox('Use two ema for sell condition')
     if(useTwoEmaSell):
         ema2Sell = st.number_input("Sell when under the " + str(ema1Sell) + " period ema and what second period: ", value = 400, step = 10)
-        sellOverNumber2 = st.number_input("Sell over ema plus: ", value = 0, step = 1)
+        sellOverNumber2 = st.number_input("Sell over ema2 plus: ", value = 0, step = 1)
        
 if(useRsiSell and useEmaSell):
     st.warning("Please keep in mind it will only sell if both conditions are satisfide")
