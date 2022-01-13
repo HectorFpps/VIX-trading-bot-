@@ -10,10 +10,12 @@ from datetime import datetime
 chartPeriod = "600d"
 interval = "1h"
 rsiPeriod = 14
-buyLimit = 50
-sellLimit = 65
-emaLength1 = 30
-emaLength2 = 150
+rsiBuy = 50
+rsiSell = 65
+ema1Buy = 30
+ema2Buy = 150
+ema1Sell = 30
+ema2Sell = 150
 bbands1 = []
 bbands2 = []
 bollLength1 = None
@@ -23,6 +25,15 @@ std2 = None
 buys = []
 sells = []
 
+#conditions
+useRsiBuy = False
+useRsiSell = False
+useEmaBuy = False
+useEmaSell = False
+useTwoEmaBuy = False
+useTwoEmaSewll = False
+sellOverNumber = 0
+sellUnderNumber = 0
 
 #Market data
 df = pd.DataFrame()
@@ -76,58 +87,74 @@ def EMA2(ema2, df):
 
 st.write("# Volatility Index Trading Bot")
 
-rsiPeriod = int(st.text_input("-Input Desired Rsi Period"))
-buyLimit = int(st.text_input("-Input Desired Buy Limit"))
-sellLimit = int(st.text_input("-Input Desired Sell Limit"))
-emaLength1 = int(st.text_input("-Input Desired EMA1"))
-emaLength2 = int(st.text_input("-Input Desired EMA2"))
+st.write("RSI")
+useRsiBuy = st.checkbox('Use rsi for buy condition')
+useRsiSell = st.checkbox('Use rsi for sell condition')
+if(useRsiSell or useRsiBuy):
+    rsiPeriod = int(st.text_input("What is the desired rsi period"))
+    if(useRsiBuy):
+        rsiBuy = int(st.text_input("Buy when rsi is under: "))
+    if(useRsiSell):
+        rsiSell = int(st.text_input("Sell when rsi is over: "))
+        
+st.write("EMA")
+useEmaBuy = st.checkbox('Use ema for buy condition')
+    if(useEmaBuy):
+        useTwoEmaBuy = st.checkbox('Use two ema for buy condition')
+        ema1Buy = int(st.text_input("Desired ema condition to buy"))
+        if(useTwoEmaBuy):
+            ema2Buy = int(st.text_input("Desired second ema condition to buy"))
+
+
+ema1 = int(st.text_input("-Input Desired EMA1"))
+ema2 = int(st.text_input("-Input Desired EMA2"))
 #bollLength1 = int(st.text_input("-Input Desired Bollinger Length 1"))
 #std1 = int(st.text_input("-Input Desired Standard 1"))
 #bollLength2 = int(st.text_input("-Input Desired Bollinger Length 2"))
 #std2 = int(st.text_input("-Input Desired Standard 2"))
 
-price(prices, df)
-RSI(rsi, df)
-EMA1(ema1, df)
-EMA2(ema2, df)
+#price(prices, df)
+#RSI(rsi, df)
+#EMA1(ema1, df)
+#EMA2(ema2, df)
 #bband1(bbands1, df)
 #bband2(bbands2, df)
 
 
-buyPrice = None
-sellprice = None
-inPosition = False
-balance = 10000
-balanceTrack = []
-balanceTrackAfterSells = []
+#buyPrice = None
+#sellprice = None
+#inPosition = False
+#balance = 10000
+#balanceTrack = []
+#balanceTrackAfterSells = []
 
-for i in range(len(prices)):
+#for i in range(len(prices)):
 
-    if not inPosition:
-        if float(prices[i]) < float(ema1[i]) and float(prices[i]) < float(ema2[i]) and float(rsi[i] < buyLimit):
-            buyPrice = prices[i]
-            buys += [buyPrice]
-            inPosition = True
+#    if not inPosition:
+#        if float(prices[i]) < float(ema1[i]) and float(prices[i]) < float(ema2[i]) and float(rsi[i] < buyLimit):
+#            buyPrice = prices[i]
+#            buys += [buyPrice]
+#            inPosition = True
 
-    if inPosition:
-        if rsi[i] > sellLimit:
-            sellPrice = prices[i]
-            sells += [sellPrice]
-            inPosition = False
-            balance = balance*sellPrice/buyPrice
-            balanceTrackAfterSells += [balance]
+#    if inPosition:
+#        if rsi[i] > sellLimit:
+#            sellPrice = prices[i]
+#            sells += [sellPrice]
+#            inPosition = False
+#            balance = balance*sellPrice/buyPrice
+#            balanceTrackAfterSells += [balance]
 
-    balanceTrack += [balance]
-dayPercent = []
+#    balanceTrack += [balance]
+#dayPercent = []
 
-for i in range(len(balanceTrack)-1):
-    dayPercent += [balanceTrack[i+1]/balanceTrack[i]*100-100]
+#for i in range(len(balanceTrack)-1):
+#    dayPercent += [balanceTrack[i+1]/balanceTrack[i]*100-100]
 
-st.write("#### Price of VIX")
-st.line_chart(prices)
-st.write("#### Bot Balance")
-st.line_chart(balanceTrack)
-st.line_chart(dayPercent)
+#st.write("#### Price of VIX")
+#st.line_chart(prices)
+#st.write("#### Bot Balance")
+#st.line_chart(balanceTrack)
+#st.line_chart(dayPercent)
 
-for i in range(len(sells)):
-    st.write("Buy Price: " + str(round(buys[i])) + ". Sell price: " + str(round(sells[i])) + " (" + str(round(sells[i]/buys[i]*100-100,1)) + "%) Balance: " + str(round(balanceTrackAfterSells[i])))
+#for i in range(len(sells)):
+#    st.write("Buy Price: " + str(round(buys[i])) + ". Sell price: " + str(round(sells[i])) + " (" + str(round(sells[i]/buys[i]*100-100,1)) + "%) Balance: " + str(round(balanceTrackAfterSells[i])))
