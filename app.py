@@ -35,6 +35,7 @@ buyUnderNumber2 = 0
 
 #Market data
 prices = []
+pricesInRange = []
 rsi = []
 ema1b = []
 ema2b = []
@@ -144,6 +145,7 @@ def trade():
     global sellUnderNumber2
     global balanceTrack
     global balanceAfterSells
+    global pricesInRange
     
     calculate()
     
@@ -151,8 +153,11 @@ def trade():
     sellprice = None
     inPosition = False
     balance = 10000
-
-    for i in range(len(prices)):
+    
+    counter = 0
+    for i in range(len(prices)-testingRange,len(prices)):
+        pricesInRange[counter] += prices[i]
+        counter += 1
         if not inPosition:
             if(rsi[i] < rsiBuy) and (prices[i] < (ema1b[i]-buyUnderNumber1)) and (prices[i] < (ema2b[i]-buyUnderNumber2)):
                 buyPrice = prices[i]
