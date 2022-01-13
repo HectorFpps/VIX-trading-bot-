@@ -191,24 +191,14 @@ chartPeriod = st.selectbox(
 
 testingRange = st.slider("How many dayd shoud the strategy test?", min_value = 2, max_value = 800)
 
-multi = 0
-d = ""
+multi = int(interval[:-1])
 
 if "m" in interval:
-    for c in interval:
-        if c != "m":
-            d += [c]  
-    multi = int(d)
     testingRange *= (24*multi)
 else:
-
-    for c in interval: 
-        if c != "d":
-            d += [c]
-    multi = int(d)
     testingRange *= multi
-            
-    st.write(multi)        
+
+  
 
 st.write("### Buy Condition")
 
