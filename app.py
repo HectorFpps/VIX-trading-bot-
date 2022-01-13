@@ -43,8 +43,10 @@ df = pd.DataFrame()
 df = df.ta.ticker(ticker, period=chartPeriod, interval=interval)
 prices = []
 rsi = []
-ema1 = []
-ema2 = []
+ema1b = []
+ema2b = []
+ema1s = []
+ema2s = []
 
 def price(prices, df):
 
@@ -59,19 +61,33 @@ def RSI(rsi, df):
     for i in range(len(df)):
         rsi += [df[i][0]]
         
-def EMA1(ema1, df):
-    df = df.ta.ema(length=emaLength1)
+def EMA1B(ema1, df):
+    df = df.ta.ema(length=ema1Buy)
     df = df.values.tolist()
     
     for i in range(len(df)):
-        ema1 += [df[i]]
+        ema1b += [df[i]]
 
-def EMA2(ema2, df):
-    df = df.ta.ema(length=emaLength2)
+def EMA2B(ema2, df):
+    df = df.ta.ema(length=ema2Buy)
     df = df.values.tolist()
     
     for i in range(len(df)):
-        ema2 += [df[i]]
+        ema2b += [df[i]]
+        
+def EMA1S(ema3, df):
+    df = df.ta.ema(length=ema1Sell)
+    df = df.values.tolist()
+    
+    for i in range(len(df)):
+        ema1s += [df[i]]
+
+def EMA2S(ema4, df):
+    df = df.ta.ema(length=ema2Sell)
+    df = df.values.tolist()
+    
+    for i in range(len(df)):
+        ema2s += [df[i]]
         
         
 #--------------------------------------------------------------------------------------------------------------------------------------------------
