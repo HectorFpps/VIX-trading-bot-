@@ -198,8 +198,6 @@ if "m" in interval:
 else:
     testingRange *= multi*24
 
-st.write(multi)
-
 st.write("### Buy Condition")
 
 useRsiBuy = st.checkbox('Use rsi for buy condition')
