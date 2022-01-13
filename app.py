@@ -105,7 +105,7 @@ def calculate():
             for i in range(len(ema2b)):
                 ema2b[i] = [1000000]
     else:
-        for i in range(len(ema1b))
+        for i in range(len(ema1b)):
             ema1b[i] = [1000000]
     
     
@@ -117,7 +117,7 @@ def calculate():
             for i in range(len(ema2s)):
                 ema2s[i] = [1000000]
     else:
-        for i in range(len(ema1s))
+        for i in range(len(ema1s)):
             ema1s[i] = [1000000]
     
     
