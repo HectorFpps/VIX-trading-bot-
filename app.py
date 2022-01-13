@@ -49,13 +49,11 @@ ema1s = []
 ema2s = []
 
 def price(prices, df):
-
     df = df.values.tolist()
     for i in range(len(df)):
         prices += [df[i][3]]
 
 def RSI(rsi, df):
-
     df = df.ta.rsi(length=rsiPeriod).to_frame()
     df = df.values.tolist()
     for i in range(len(df)):
@@ -91,6 +89,9 @@ def EMA2S(ema2s, df):
         
         
 def calculate():
+    global useRsiBuy
+    
+    
     if not useRsiBuy:
         rsiBuy = 100
     if not useRsiSell:
@@ -123,7 +124,7 @@ def calculate():
     
 def trade():
     calculate()
-    st.write(rsi)
+    st.write(rsiBuy,risSell)
 #buyPrice = None
 #sellprice = None
 #inPosition = False
