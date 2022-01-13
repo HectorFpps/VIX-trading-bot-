@@ -183,14 +183,32 @@ ticker = st.text_input("Ticker of yahoo finance: ", value = "^VIX")
 
 interval = st.selectbox(
      'What candlestick inverval?',
-     ('1m', '2m', '5m','15m','30m','60m','90m','1h','1d','5d','1wk','1mo','3mo'),index=7)
+     ('1m', '2m', '5m','15m','30m','60m','90m','1h','1d','5d'),index=7)
 
 chartPeriod = st.selectbox(
      'How many data shoud it download?',
      ('1h','2h','12h','1d','2d', '5d','15d','30d','60d','100d','200d','300d','400d','600d','800d'),index = 13)
 
-testingRange = st.slider("How many intervals shoud the stategy do?", min_value = 2, max_value = 10000)
-    
+testingRange = st.slider("How many dayd shoud the strategy test?", min_value = 2, max_value = 800)
+
+multi = 0
+d = ""
+
+if "m" in interval:
+    for c in interval:
+        if c != "m":
+            d += c  
+    multi = int(d)
+    testingRange *= (24*multi)
+else:
+
+    for c in intercal: 
+        if c != "d":
+            d += c
+    multi = int(d)
+    testingRange *= multi
+            
+    st.write(multi)        
 
 st.write("### Buy Condition")
 
