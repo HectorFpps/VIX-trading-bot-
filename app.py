@@ -26,7 +26,7 @@ sells = []
 
 #Market data
 df = pd.DataFrame()
-df = df.ta.ticker("^GSPC", period=chartPeriod, interval=interval)
+df = df.ta.ticker("^VIX", period=chartPeriod, interval=interval)
 prices = []
 rsi = []
 ema1 = []
