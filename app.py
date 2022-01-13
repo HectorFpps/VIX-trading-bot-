@@ -98,10 +98,10 @@ def calculate():
         rsiSell = 0
     price(prices, df)
     RSI(rsi, df)
-    EMA1B(ema1, df)
-    EMA2B(ema1, df)
-    EMA1S(ema1, df)
-    EMA2S(ema1, df)
+    EMA1B(ema1b, df)
+    EMA2B(ema2b, df)
+    EMA1S(ema1s, df)
+    EMA2S(ema2s, df)
 #--------------------------------------------------------------------------------------------------------------------------------------------------
 
 
