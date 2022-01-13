@@ -96,10 +96,10 @@ if(useRsiBuy):
     rsiBuy = int(st.text_input("Buy when rsi is under: "))
 
 if(useEmaBuy):
+    ema1Buy = int(st.text_input("Buy when ema is under: "))
     useTwoEmaBuy = st.checkbox('Use two ema for buy condition')
-    ema1Buy = int(st.text_input("Desired ema condition to buy"))
     if(useTwoEmaBuy):
-        ema2Buy = int(st.text_input("Desired second ema condition to buy"))
+        ema2Buy = int(st.text_input("Buy when ema is under " + str(ema1Buy) + " and second ema is under: "))
 
 st.write("Sell Condition")
 
