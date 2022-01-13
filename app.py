@@ -194,9 +194,9 @@ testingRange = st.slider("How many days shoud the strategy test?", min_value = 2
 multi = int(interval[:-1])
 
 if "m" in interval:
-    testingRange *= (24*multi)
+    testingRange *= (24*60*multi)
 else:
-    testingRange *= multi
+    testingRange *= multi*24
 
 st.write(multi)
 
