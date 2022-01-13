@@ -127,7 +127,7 @@ if(useRsiSell and useEmaSell):
 
 if(useRsiBuy or useRsiSell):
     st.write("### Necesari data")
-    rsiPeriod = st.number_input("What is the desired rsi period for the buy and sell rsi")
+    rsiPeriod = st.number_input("What is the desired rsi period for the buy and sell rsi", value = 14, step = 2)
 
 
 
