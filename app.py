@@ -158,9 +158,9 @@ def trade():
                 inPosition = False
                 balance = balance*sellPrice/buyPrice
                 balanceTrackAfterSells += [balance]
+                st.write(balance)
 
         balanceTrack += [balance]
-        st.write(balance)
     
 #--------------------------------------------------------------------------------------------------------------------------------------------------
 
