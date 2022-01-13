@@ -154,7 +154,6 @@ def trade():
     sellprice = None
     inPosition = False
     balance = 10000
-    st.write("# testingRange: " + str(testingRange))
     for i in range(len(prices)-testingRange,len(prices)):
         pricesInRange += [prices[i]]
         if not inPosition:
@@ -248,5 +247,5 @@ if(calculateButton):
     st.line_chart(pricesInRange)
     st.line_chart(balanceTrack)
     
-    for i in range(len(pricesInRange)):
-        st.write(pricesInRange[i])
+    for i in range(len(prices)):
+        st.write(prices)
