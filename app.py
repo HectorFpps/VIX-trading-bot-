@@ -8,7 +8,7 @@ from datetime import datetime
 
 #User input
 chartPeriod = "30d"
-interval = "1h"
+interval = "1d"
 rsiPeriod = 14
 rsiBuy = 50
 rsiSell = 65
