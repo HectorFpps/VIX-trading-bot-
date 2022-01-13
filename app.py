@@ -24,6 +24,7 @@ std1 = None
 std2 = None
 buys = []
 sells = []
+ticker = "^VIX"
 
 #conditions
 useRsiBuy = False
@@ -37,7 +38,7 @@ sellUnderNumber = 0
 
 #Market data
 df = pd.DataFrame()
-df = df.ta.ticker("^VIX", period=chartPeriod, interval=interval)
+df = df.ta.ticker(ticker, period=chartPeriod, interval=interval)
 prices = []
 rsi = []
 ema1 = []
@@ -87,6 +88,9 @@ def EMA2(ema2, df):
 
 st.write("# Volatility Index Trading Bot")
 
+st.write("What ticker do you want to trade: ")
+ticker = st.text_input("Ticker of yahoo finance: ")
+
 st.write("### Buy Condition")
 
 useRsiBuy = st.checkbox('Use rsi for buy condition')
@@ -95,10 +99,10 @@ if(useRsiBuy):
     
 useEmaBuy = st.checkbox('Use ema for buy condition')
 if(useEmaBuy):
-    ema1Buy = int(st.text_input("Buy when ema is under: "))
+    ema1Buy = int(st.text_input("Buy when over ema of what period: "))
     useTwoEmaBuy = st.checkbox('Use two ema for buy condition')
     if(useTwoEmaBuy):
-        ema2Buy = int(st.text_input("Buy when ema is under " + str(ema1Buy) + " and second ema is under: "))
+        ema2Buy = int(st.text_input("Buy when under the " + str(ema1Buy) + " period ema and what second period: "))
 
 
         
@@ -110,14 +114,11 @@ if(useRsiSell):
     
 useEmaSell = st.checkbox('Use ema for sell condition')
 if(useEmaSell):
-    ema1Sell = int(st.text_input("Sell when ema is over: "))
+    ema1Sell = int(st.text_input("Sell when over ema of what period: "))
     useTwoEmaSell = st.checkbox('Use two ema for sell condition')
     if(useTwoEmaSell):
-        ema2Sell = int(st.text_input("Buy when ema is over " + str(ema1Buy) + " and second ema is over: "))
+        ema2Sell = int(st.text_input("Sell when under the " + str(ema1Sell) + " period ema and what second period: "))
 
-
-    
-        
 if(useRsiBuy or useRsiSell):
     st.write("### Necesari data")
     rsiPeriod = int(st.text_input("What is the desired rsi period for the buy and sell rsi"))
