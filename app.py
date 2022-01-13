@@ -104,7 +104,7 @@ if(useEmaBuy):
 st.write("### Sell Condition")
 
 useRsiSell = st.checkbox('Use rsi for sell condition')
-useEmaSell = st.checkbox('Use rsi for sell condition')
+useEmaSell = st.checkbox('Use ema for sell condition')
 
 
 if(useRsiSell):
@@ -112,7 +112,7 @@ if(useRsiSell):
     
         
 if(useRsiBuy or useRsiSell):
-    rsiPeriod = int(st.text_input("What is the desired rsi period"))
+    rsiPeriod = int(st.text_input("What is the desired rsi period for the buy and sell rsi"))
 
 
 
