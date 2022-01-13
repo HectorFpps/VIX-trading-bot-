@@ -155,8 +155,8 @@ def trade():
     inPosition = False
     balance = 10000
     
-    for i in range(len(prices)-testingRange,len(prices)-1):
-        pricesInRange += prices[i]
+    for i in range(len(prices)-testingRange,len(prices)):
+        pricesInRange += [prices[i]]
         if not inPosition:
             if(rsi[i] < rsiBuy) and (prices[i] < (ema1b[i]-buyUnderNumber1)) and (prices[i] < (ema2b[i]-buyUnderNumber2)):
                 buyPrice = prices[i]
