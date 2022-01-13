@@ -99,6 +99,7 @@ sellprice = None
 inPosition = False
 balance = 10000
 balanceTrack = []
+balanceTrackAftersells = [balance]
 
 for i in range(len(prices)):
 
@@ -114,6 +115,7 @@ for i in range(len(prices)):
             sells += [sellPrice]
             inPosition = False
             balance = balance*sellPrice/buyPrice
+            balanceTrackAfterSells += [balance]
 
     balanceTrack += [balance]
 dayPercent = []
@@ -128,4 +130,4 @@ st.line_chart(balanceTrack)
 st.line_chart(dayPercent)
 
 for i in range(len(sells)):
-    st.write("Buy Price: " + str(round(buys[i])) + ". Sell price: " + str(round(sells[i])) + " (" + str(round(sells[i]/buys[i]*100-100,1)) + "%) Balance: " + str(balanceTrack[i]) )
+    st.write("Buy Price: " + str(round(buys[i])) + ". Sell price: " + str(round(sells[i])) + " (" + str(round(sells[i]/buys[i]*100-100,1)) + "%) Balance: ")
