@@ -123,21 +123,17 @@ if(useEmaSell):
         ema2Sell = st.number_input("Sell when under the " + str(ema1Sell) + " period ema and what second period: ", value = 400, step = 10)
        
 if(useRsiSell and useEmaSell):
-    st.warning("Please keep in mind it will sell if either the rsi or both ema conditions are satisfide")
+    st.warning("Please keep in mind it will only sell if both conditions are satisfide")
 
 if(useRsiBuy or useRsiSell):
     st.write("### Necesari data")
-    rsiPeriod = int(st.text_input("What is the desired rsi period for the buy and sell rsi"))
+    rsiPeriod = st.number_input("What is the desired rsi period for the buy and sell rsi")
 
 
 
 
 #ema1 = int(st.text_input("-Input Desired EMA1"))
 #ema2 = int(st.text_input("-Input Desired EMA2"))
-#bollLength1 = int(st.text_input("-Input Desired Bollinger Length 1"))
-#std1 = int(st.text_input("-Input Desired Standard 1"))
-#bollLength2 = int(st.text_input("-Input Desired Bollinger Length 2"))
-#std2 = int(st.text_input("-Input Desired Standard 2"))
 
 #price(prices, df)
 #RSI(rsi, df)
