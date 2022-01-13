@@ -117,18 +117,19 @@ def calculate():
     else:
         for i in range(len(prices)):
             ema1b += [1000000]
-    
-    
+            ema2b += [1000000]
+            
     if useEmaSell:
         EMA1S(ema1s, df)
         if useTwoEmaSell:
             EMA2S(ema2s, df)
         else:
             for i in range(len(prices)):
-                ema2s += [1000000]
+                ema2s += [0]
     else:
         for i in range(len(prices)):
-            ema1s += [1000000]
+            ema1s += [0]
+            ema2s += [0]
     
     
 def trade():
