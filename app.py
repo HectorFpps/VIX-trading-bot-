@@ -92,6 +92,9 @@ st.write("Buy Condition")
 useRsiBuy = st.checkbox('Use rsi for buy condition')
 useEmaBuy = st.checkbox('Use ema for buy condition')
 
+if(useRsiBuy):
+    rsiBuy = int(st.text_input("Buy when rsi is under: "))
+
 if(useEmaBuy):
     useTwoEmaBuy = st.checkbox('Use two ema for buy condition')
     ema1Buy = int(st.text_input("Desired ema condition to buy"))
@@ -103,11 +106,10 @@ st.write("Sell Condition")
 useRsiSell = st.checkbox('Use rsi for sell condition')
 useEmaSell = st.checkbox('Use rsi for sell condition')
 
-if(useRsiSell or useRsiBuy):
-    if(useRsiBuy):
-        rsiBuy = int(st.text_input("Buy when rsi is under: "))
-    if(useRsiSell):
-        rsiSell = int(st.text_input("Sell when rsi is over: "))
+
+if(useRsiSell):
+    rsiSell = int(st.text_input("Sell when rsi is over: "))
+    
         
 if(useRsiBuy or useRsiSell):
     rsiPeriod = int(st.text_input("What is the desired rsi period"))
