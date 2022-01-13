@@ -89,8 +89,8 @@ def EMA2S(ema2s, df):
         
         
 def calculate():
-    global useRsiBuy
-    
+    global rsiBuy
+    global rsiSell
     
     if not useRsiBuy:
         rsiBuy = 100
@@ -123,6 +123,9 @@ def calculate():
     
     
 def trade():
+    global rsiBuy
+    global rsiSell
+    
     calculate()
     st.write(rsiBuy,risSell)
 #buyPrice = None
