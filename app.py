@@ -123,7 +123,7 @@ def calculate():
     
 def trade():
     calculate()
-    st.write(price)
+    st.write(prices)
 #buyPrice = None
 #sellprice = None
 #inPosition = False
