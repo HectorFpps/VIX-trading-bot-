@@ -189,7 +189,7 @@ chartPeriod = st.selectbox(
      'How many data shoud it download?',
      ('1h','2h','12h','1d','2d', '5d','15d','30d','60d','100d','200d','300d','400d','600d','800d'),index = 13)
 
-testingRange = st.slider("How many dayd shoud the strategy test?", min_value = 2, max_value = 800)
+testingRange = st.slider("How many days shoud the strategy test?", min_value = 2, max_value = 800)
 
 multi = int(interval[:-1])
 
