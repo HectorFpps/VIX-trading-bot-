@@ -140,7 +140,7 @@ def trade():
     global ema2s
     
     calculate()
-    print(ema1b)
+    print(ema2b)
     
 #buyPrice = None
 #sellprice = None
