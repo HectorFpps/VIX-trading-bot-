@@ -293,10 +293,14 @@ if(calculateButton):
     if not useEmaBuy:
         for i in range(len(ema1b)):
             ema1b[i] = 0
+        for i in range(len(ema2b)):
+            ema2b[i] = 0
          
     if not useEmaSell:
         for i in range(len(ema1s)):
             ema1s[i] = 0
+        for i in range(len(ema2s)):
+            ema2s[i] = 0
          
     if not useTwoEmaBuy:
         for i in range(len(ema2b)):
