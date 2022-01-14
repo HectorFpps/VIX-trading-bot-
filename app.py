@@ -260,5 +260,9 @@ if(calculateButton):
     st.write("#### Profit: " + str(round(balanceTrack[-1]-startingBalance)))
     st.write("#### Profit(%): " + str(round((balanceTrack[-1]-startingBalance)/startingBalance*100,1)))
     
+    for i in range(len(balanceAfterSells)):
+        st.write("Trade number " + str(i) + ": Balance: " + str(round(balanceAfterSells[i])))
+    
+    
 
 
