@@ -319,7 +319,7 @@ if(calculateButton):
     st.line_chart(balanceTrack)
     
     
-    st.write("#### Making trades from: "+ str(dates[len(prices)-testingRange]) + " to " + str(dates[len(prices)]))
+    st.write("###### Making trades from: "+ str(dates[len(prices)-testingRange]) + " to " + str(dates[len(prices)]))
     st.write("#### Starting balance: " + str(round(startingBalance)) + "$.")
     st.write("#### End balance: " + str(round(balanceTrack[-1])) + "$.")
     st.write("#### Profit: " + str(round(balanceTrack[-1]-startingBalance)) + "$.")
