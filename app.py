@@ -68,7 +68,6 @@ def price(prices, df):
             st.write(df[i][4])
             st.write(df[i][5])
             st.write(df[i][6])
-            st.write(df[i][7])
         
 
 def RSI(rsi, df):
