@@ -59,7 +59,7 @@ def price(prices, df):
     df = df.values.tolist()
     for i in range(len(df)):
         prices += [df[i][3]]
-        dates += [5]
+        dates += ["HELO"]
         
 def RSI(rsi, df):
     df = df.ta.rsi(length=rsiPeriod).to_frame()
@@ -269,7 +269,6 @@ if(useRsiBuy or useRsiSell):
     rsiPeriod = st.number_input("What is the desired rsi period for the buy and sell rsi", value = 14, step = 2)
 
 df = df.ta.ticker(ticker, period=chartPeriod, interval=interval)
-st.write(df)
     
 calculateButton = st.button("Calculate")
 
