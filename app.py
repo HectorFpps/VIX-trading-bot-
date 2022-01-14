@@ -39,6 +39,10 @@ leverage = 1
 #Market data
 prices = []
 pricesInRange = []
+ema1bInRange = []
+ema2bInRange = []
+ema1sInRange = []
+ema2sInRange = []
 rsi = []
 ema1b = []
 ema2b = []
@@ -175,6 +179,10 @@ def trade():
     for i in range(len(prices)-testingRange,len(prices)):
     #for i in range(len(prices)):
         pricesInRange += [prices[i]]
+        ema1bInRange += [ema1b[i]]
+        ema2bInRange += [ema2b[i]]
+        ema1sInRange += [ema1s[i]]
+        ema2sInRange += [ema2s[i]]
         if not inPosition:
             now = balance
             if(rsi[i] < rsiBuy) and (prices[i] < (ema1b[i]-buyUnderNumber1)) and (prices[i] < (ema2b[i]-buyUnderNumber2)):
@@ -294,10 +302,11 @@ if(calculateButton):
         for i in range(len(ema2s)):
             ema2s[i] = 0
             
+            
     #resultDataframe = pd.DataFrame(list(zip(prices, rsi, ema1b, ema2b, ema1s, ema2s)),
     #           columns =['Price', 'Rsi' , 'Buy ema 1', 'Buy ema 2', 'Sell ema 1', 'Sell ema 2'])
     
-    chartDataframe = pd.DataFrame(list(zip(prices, ema1b, ema2b, ema1s, ema2s)),
+    chartDataframe = pd.DataFrame(list(zip(prices, ema1bInRange, ema2bInRange, ema1sInRange, ema2sInRange)),
                columns =['Price', 'Buy ema 1', 'Buy ema 2', 'Sell ema 1', 'Sell ema 2'])
     
     st.write(chartDataframe)
