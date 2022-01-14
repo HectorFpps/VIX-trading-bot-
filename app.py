@@ -242,8 +242,9 @@ if(useEmaSell):
 if(useRsiSell and useEmaSell):
     st.warning("Please keep in mind it will only sell if both conditions are satisfide")
 
+st.write("### Necesari data")    
+leverage = st.slider("How much leveradge for your trades?", min_value = 1, max_value = 10)
 if(useRsiBuy or useRsiSell):
-    st.write("### Necesari data")
     rsiPeriod = st.number_input("What is the desired rsi period for the buy and sell rsi", value = 14, step = 2)
 
 df = df.ta.ticker(ticker, period=chartPeriod, interval=interval)
