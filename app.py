@@ -20,6 +20,7 @@ sells = []
 ticker = "^VIX"
 testingRange = 30
 startingBalance = 20000
+liquidated = False
 
 #conditions
 useRsiBuy = False
@@ -163,12 +164,13 @@ def trade():
     sellprice = None
     inPosition = False
     balance = startingBalance
+    now = none
     
     for i in range(len(prices)-testingRange,len(prices)):
     #for i in range(len(prices)):
         pricesInRange += [prices[i]]
         if not inPosition:
-            pandl += [balance]
+            now = balance
             if(rsi[i] < rsiBuy) and (prices[i] < (ema1b[i]-buyUnderNumber1)) and (prices[i] < (ema2b[i]-buyUnderNumber2)):
                 buyPrice = prices[i]
                 buys += [buyPrice]
@@ -176,15 +178,18 @@ def trade():
                         
                 
         if inPosition:
-            pandl += [balance+(balance * (prices[i]-buyPrice)/buyPrice*leverage)]
+            now = balance+(balance * (prices[i]-buyPrice)/buyPrice*leverage)
             if(rsi[i] > rsiSell) and (prices[i] > (ema1s[i]+sellOverNumber1)) and (prices[i] > (ema2s[i]+sellOverNumber2)):
                 sellPrice = prices[i]
                 sells += [sellPrice]
                 inPosition = False
                 balance += balance * (sellPrice-buyPrice)/buyPrice*leverage
                 balanceAfterSells += [balance]
-                
         
+        if new <= 0:
+            balance = 0
+            
+        pandl += [new] 
         
         balanceTrack += [balance]
     
