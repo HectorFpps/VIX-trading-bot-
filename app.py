@@ -302,7 +302,7 @@ if(calculateButton):
     
     st.write(chartDataframe)
     st.line_chart(pricesInRange)
-    #st.line_chart(chartDataframe)
+    st.line_chart(chartDataframe)
     st.line_chart(pandl)
     st.line_chart(balanceTrack)
     
