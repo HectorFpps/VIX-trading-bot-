@@ -256,7 +256,7 @@ if(calculateButton):
     st.line_chart(balanceTrack)
     
     st.write("#### Starting balance: " + str(startingBalance))
-    st.write("#### End balance: " + str(balanceTrack[-1])
+    st.write("#### End balance: " + str(balanceTrack[-1]))
     st.write("#### Profit: " + str(balanceTrack[-1]-startingBalance))
     
 
