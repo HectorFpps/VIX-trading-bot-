@@ -175,7 +175,7 @@ def trade():
                         
                 
         if inPosition:
-            pandl += [balance * (prices[i]-buyPrice)/prices[i]*leverage]
+            pandl += [balance+(balance * (prices[i]-buyPrice)/buyPrice*leverage)]
             if(rsi[i] > rsiSell) and (prices[i] > (ema1s[i]+sellOverNumber1)) and (prices[i] > (ema2s[i]+sellOverNumber2)):
                 sellPrice = prices[i]
                 sells += [sellPrice]
