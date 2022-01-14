@@ -292,23 +292,23 @@ if(calculateButton):
     
     if not useEmaBuy:
         for i in range(len(ema1bInRange)):
-            ema1b[i] = 0
+            ema1bInRange[i] = 0
         for i in range(len(ema2bInRange)):
-            ema2b[i] = 0
+            ema2bInRange[i] = 0
          
     if not useEmaSell:
         for i in range(len(ema1sInRange)):
-            ema1s[i] = 0
+            ema1sInRange[i] = 0
         for i in range(len(ema2sInRange)):
-            ema2s[i] = 0
+            ema2sInRange[i] = 0
          
     if not useTwoEmaBuy:
         for i in range(len(ema2bInRange)):
-            ema2b[i] = 0
+            ema2bInRange[i] = 0
             
     if not useTwoEmaSell:
         for i in range(len(ema2sInRange)):
-            ema2s[i] = 0
+            ema2sInRange[i] = 0
             
             
     #resultDataframe = pd.DataFrame(list(zip(prices, rsi, ema1b, ema2b, ema1s, ema2s)),
