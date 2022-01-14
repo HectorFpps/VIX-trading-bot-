@@ -33,7 +33,7 @@ sellOverNumber1 = 0
 sellOverNumber2 = 0
 buyUnderNumber1 = 0
 buyUnderNumber2 = 0
-leverage = 1
+leverage = 1.0
 
 
 #Market data
