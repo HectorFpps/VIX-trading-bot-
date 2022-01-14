@@ -18,7 +18,7 @@ ema1Sell = 30
 ema2Sell = 150
 buys = []
 sells = []
-ticker = "^VIX"
+ticker = "eth-usd"
 testingRange = 30
 
 #conditions
