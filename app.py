@@ -167,6 +167,10 @@ def trade():
     global pandl
     global dates
     global datesBuys
+    global ema1bInRange
+    global ema1sInRange
+    global ema2bInRange
+    global ema2sInRange
     
     calculate()
     
