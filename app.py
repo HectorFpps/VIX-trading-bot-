@@ -291,23 +291,23 @@ if(calculateButton):
     trade()
     
     if not useEmaBuy:
-        for i in range(len(ema1b)):
+        for i in range(len(ema1bInRange)):
             ema1b[i] = 0
-        for i in range(len(ema2b)):
+        for i in range(len(ema2bInRange)):
             ema2b[i] = 0
          
     if not useEmaSell:
-        for i in range(len(ema1s)):
+        for i in range(len(ema1sInRange)):
             ema1s[i] = 0
-        for i in range(len(ema2s)):
+        for i in range(len(ema2sInRange)):
             ema2s[i] = 0
          
     if not useTwoEmaBuy:
-        for i in range(len(ema2b)):
+        for i in range(len(ema2bInRange)):
             ema2b[i] = 0
-    st.write(useTwoEmaBuy)
+            
     if not useTwoEmaSell:
-        for i in range(len(ema2s)):
+        for i in range(len(ema2sInRange)):
             ema2s[i] = 0
             
             
