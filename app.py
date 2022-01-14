@@ -276,13 +276,30 @@ calculateButton = st.button("Calculate")
 if(calculateButton):
     trade()
     
-    resultDataframe = pd.DataFrame(list(zip(prices, rsi, ema1b, ema2b, ema1s, ema2s)),
-               columns =['Price', 'Rsi' , 'Buy ema 1', 'Buy ema 2', 'Sell ema 1', 'Sell ema 2'])
+    if not useEmaBuy:
+        for i in range(len(useEmaBuy)):
+            ema1b[i] = [0]
+         
+    if not useEmaSell:
+        for i in range(len(useEmaBuy)):
+            ema1s[i] = [0]
+         
+    if not useTwoEmaBuy:
+        for i in range(len(useEmaBuy)):
+            ema2b[i] = [0]
+            
+    if not useTwoEmaSell:
+        for i in range(len(useEmaBuy)):
+            ema2s[i] = [0]
+            
+    #resultDataframe = pd.DataFrame(list(zip(prices, rsi, ema1b, ema2b, ema1s, ema2s)),
+    #           columns =['Price', 'Rsi' , 'Buy ema 1', 'Buy ema 2', 'Sell ema 1', 'Sell ema 2'])
     
     chartDataframe = pd.DataFrame(list(zip(prices, ema1b, ema2b, ema1s, ema2s)),
                columns =['Price', 'Buy ema 1', 'Buy ema 2', 'Sell ema 1', 'Sell ema 2'])
     
     st.line_chart(pricesInRange)
+    st.line_chart(chartDataframe)
     st.line_chart(pandl)
     st.line_chart(balanceTrack)
     
