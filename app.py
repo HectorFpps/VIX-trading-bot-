@@ -255,9 +255,10 @@ if(calculateButton):
     #st.write(df)
     st.line_chart(balanceTrack)
     
-    st.write("#### Starting balance: " + str(startingBalance))
-    st.write("#### End balance: " + str(balanceTrack[-1]))
-    st.write("#### Profit: " + str(balanceTrack[-1]-startingBalance))
+    st.write("#### Starting balance: " + str(round(startingBalance)))
+    st.write("#### End balance: " + str(round(balanceTrack[-1])))
+    st.write("#### Profit: " + str(round(balanceTrack[-1]-startingBalance)))
+    st.write("#### Profit(%): " + str(round(balanceTrack[-1]-startingBalance)))
     
 
 
