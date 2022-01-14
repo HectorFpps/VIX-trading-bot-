@@ -199,9 +199,9 @@ testingRange = st.slider("How many days shoud the strategy test?", min_value = 2
 multi = int(interval[:-1])
 
 if "m" in interval:
-    testingRange *= (7*60*multi)
+    testingRange *= (6*60*multi)
 else:
-    testingRange *= multi*7
+    testingRange *= multi*6
 
 st.write("### Buy Condition")
 
@@ -258,7 +258,7 @@ if(calculateButton):
     st.write("#### Starting balance: " + str(round(startingBalance)))
     st.write("#### End balance: " + str(round(balanceTrack[-1])))
     st.write("#### Profit: " + str(round(balanceTrack[-1]-startingBalance)))
-    st.write("#### Profit(%): " + str(round(balanceTrack[-1]-startingBalance)))
+    st.write("#### Profit(%): " + str(round((balanceTrack[-1]-startingBalance/startingBalance))))
     
 
 
