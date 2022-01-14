@@ -288,8 +288,6 @@ if(useRsiBuy or useRsiSell):
 df = df.ta.ticker(ticker, period=chartPeriod, interval=interval)
 for i in range(len(df)):
     dates += [df.index[i]]
-    
-st.markdown(f'<p style="color:#33ff33;">Hello</p>', unsafe_allow_html=True)
 
 calculateButton = st.button("Calculate")
 
@@ -338,7 +336,8 @@ if(calculateButton):
     
     
     for i in range(len(balanceAfterSells)):
-        st.write("Date: " + str(datesBuys[i]) + " Trade number " + str(i+1) + ": Buy: " + str(round(buys[i],1)) + "$ Sell: " + str(round(sells[i],1)) + "$ Profit/Loss: " + str(round(balanceTrack[i] * ((sells[i]-buys[i])/buys[i]*leverage),1)) + "$ Percentage: " + str(round((sells[i]-buys[i])/buys[i]*100*leverage,1)) + "% Balance: " + str(round(balanceAfterSells[i])) + "$.")
+        text = "Date: " + str(datesBuys[i]) + " Trade number " + str(i+1) + ": Buy: " + str(round(buys[i],1)) + "$ Sell: " + str(round(sells[i],1)) + "$ Profit/Loss: " + str(round(balanceTrack[i] * ((sells[i]-buys[i])/buys[i]*leverage),1)) + "$ Percentage: " + str(round((sells[i]-buys[i])/buys[i]*100*leverage,1)) + "% Balance: " + str(round(balanceAfterSells[i])) + "$."
+        st.markdown(f'<p style="color:#33ff33;">{text}</p>', unsafe_allow_html=True)
         
     
     
