@@ -46,8 +46,6 @@ balanceAfterSells = []
 
 ############################
 df = pd.DataFrame()
-df = df.ta.ticker(ticker, period=chartPeriod, interval=interval)
-st.write(df)
 ############################
 
 def price(prices, df):
@@ -248,6 +246,8 @@ if(useRsiBuy or useRsiSell):
 
 
 calculateButton = st.button("Calculate")
+
+df = df.ta.ticker(ticker, period=chartPeriod, interval=interval)
 
 if(calculateButton):
     trade()
