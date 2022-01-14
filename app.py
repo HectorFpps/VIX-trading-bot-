@@ -201,6 +201,9 @@ if "m" in interval:
     testingRange *= (24*60*multi)
 else:
     testingRange *= multi*24
+    
+df = df.ta.ticker(ticker, period=chartPeriod, interval=interval)
+st.write(df)
 
 st.write("### Buy Condition")
 
@@ -246,8 +249,6 @@ if(useRsiBuy or useRsiSell):
 
 
 calculateButton = st.button("Calculate")
-
-df = df.ta.ticker(ticker, period=chartPeriod, interval=interval)
 
 if(calculateButton):
     trade()
