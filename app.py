@@ -55,6 +55,7 @@ df = pd.DataFrame()
 ############################
 
 def price(prices, df):
+    global dates
     df = df.values.tolist()
     for i in range(len(df)):
         prices += [df[i][3]]
