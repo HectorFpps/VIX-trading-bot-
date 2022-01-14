@@ -293,8 +293,8 @@ if(calculateButton):
     
     #st.write(df.index[0])
     
-    resultDataframe = pd.DataFrame(list(zip(prices, rsi, emab1, emab2, emas1, emas2)),
-               columns =['Price', 'Rsi' , 'Buy ema 1', 'Buy ema 2', 'Sell ema1', 'Sell ema2'])
+    resultDataframe = pd.DataFrame(list(zip(prices, rsi, ema1b, ema2b, ema1s, ema2s)),
+               columns =['Price', 'Rsi' , 'Buy ema 1', 'Buy ema 2', 'Sell ema 1', 'Sell ema 2'])
     
     st.write(resultDataframe)
     
