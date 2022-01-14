@@ -71,32 +71,36 @@ def RSI(rsi, df):
         rsi += [df[i][0]]
         
 def EMA1B(ema1b, df):
+    global buyUnderNumber1
     df = df.ta.ema(length=ema1Buy)
     df = df.values.tolist()
     
     for i in range(len(df)):
-        ema1b += [df[i]]
+        ema1b += [df[i]-buyUnderNumber1]
 
 def EMA2B(ema2b, df):
+    global buyUnderNumber2
     df = df.ta.ema(length=ema2Buy)
     df = df.values.tolist()
     
     for i in range(len(df)):
-        ema2b += [df[i]]
+        ema2b += [df[i]-buyUnderNumber2]
         
 def EMA1S(ema1s, df):
+    global sellOverNumber1
     df = df.ta.ema(length=ema1Sell)
     df = df.values.tolist()
     
     for i in range(len(df)):
-        ema1s += [df[i]]
+        ema1s += [df[i]+sellOverNumber1]
 
 def EMA2S(ema2s, df):
+    global sellOverNumber2
     df = df.ta.ema(length=ema2Sell)
     df = df.values.tolist()
     
     for i in range(len(df)):
-        ema2s += [df[i]]
+        ema2s += [df[i]+sellOverNumber]
         
         
 def calculate():
@@ -189,7 +193,7 @@ def trade():
         ema2sInRange += [ema2s[i]]
         if not inPosition:
             now = balance
-            if(rsi[i] < rsiBuy) and (prices[i] < (ema1b[i]-buyUnderNumber1)) and (prices[i] < (ema2b[i]-buyUnderNumber2)):
+            if(rsi[i] < rsiBuy) and (prices[i] < (ema1b[i]) and (prices[i] < (ema2b[i])):
                 buyPrice = prices[i]
                 buys += [buyPrice]
                 inPosition = True
@@ -197,7 +201,7 @@ def trade():
                 
         if inPosition:
             now = balance+(balance * (prices[i]-buyPrice)/buyPrice*leverage)
-            if(rsi[i] > rsiSell) and (prices[i] > (ema1s[i]+sellOverNumber1)) and (prices[i] > (ema2s[i]+sellOverNumber2)):
+            if(rsi[i] > rsiSell) and (prices[i] > (ema1s[i])) and (prices[i] > (ema2s[i])):
                 sellPrice = prices[i]
                 sells += [sellPrice]
                 inPosition = False
