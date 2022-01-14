@@ -263,7 +263,7 @@ if(calculateButton):
     profit = balanceTrack[-1]-startingBalance
     percentage = (balanceTrack[-1]-startingBalance)/startingBalance
     
-    st.write("#### Money compounded 1y: " + str(round(startingBlanace*((1+percentage)**(365/testingRange)))))
+    st.write("#### Money compounded 1y: " + str(startingBlanace*((1+percentage)**(365/testingRange))))
     
     for i in range(len(balanceAfterSells)):
         st.write("Trade number " + str(i+1) + ": Buy: " + str(round(buys[i],1)) + " Sell: " + str(round(sells[i],1)) + " Profit/Loss: " + str(round(sells[i]/buys[i]*100,1))+ " Balance: " + str(round(balanceAfterSells[i])))
