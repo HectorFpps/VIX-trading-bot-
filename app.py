@@ -46,6 +46,8 @@ balanceAfterSells = []
 
 ############################
 df = pd.DataFrame()
+df = df.ta.ticker(ticker, period=chartPeriod, interval=interval)
+st.write(df)
 ############################
 
 def price(prices, df):
@@ -201,9 +203,6 @@ if "m" in interval:
     testingRange *= (24*60*multi)
 else:
     testingRange *= multi*24
-    
-df = df.ta.ticker(ticker, period=chartPeriod, interval=interval)
-st.write(df)
 
 st.write("### Buy Condition")
 
