@@ -291,6 +291,7 @@ if(calculateButton):
     if not useTwoEmaSell:
         for i in range(len(ema2s)):
             ema2s[i] = ["g"]
+            ema2s[i] = [0]
             
     #resultDataframe = pd.DataFrame(list(zip(prices, rsi, ema1b, ema2b, ema1s, ema2s)),
     #           columns =['Price', 'Rsi' , 'Buy ema 1', 'Buy ema 2', 'Sell ema 1', 'Sell ema 2'])
