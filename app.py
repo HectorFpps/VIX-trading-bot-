@@ -59,7 +59,7 @@ def price(prices, df):
     df = df.values.tolist()
     for i in range(len(df)):
         prices += [df[i][3]]
-        dates += [df[i][0]]
+        dates += [df[i][-1]]
         
 
 def RSI(rsi, df):
