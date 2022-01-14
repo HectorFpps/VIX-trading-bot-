@@ -270,6 +270,7 @@ if(useRsiBuy or useRsiSell):
     rsiPeriod = st.number_input("What is the desired rsi period for the buy and sell rsi", value = 14, step = 2)
 
 df = df.ta.ticker(ticker, period=chartPeriod, interval=interval)
+st.write(df)
     
 calculateButton = st.button("Calculate")
 
