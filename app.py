@@ -293,6 +293,11 @@ if(calculateButton):
     
     #st.write(df.index[0])
     
+    resultDataframe = pd.DataFrame(list(zip(prices, rsi, emab1, emab2, emas1, emas2)),
+               columns =['Price', 'Rsi' , 'Buy ema 1', 'Buy ema 2', 'Sell ema1', 'Sell ema2'])
+    
+    st.write(resultDataframe)
+    
     for i in range(len(balanceAfterSells)):
         st.write("Date: " + str(datesBuys[i]) + " Trade number " + str(i+1) + ": Buy: " + str(round(buys[i],1)) + "$ Sell: " + str(round(sells[i],1)) + "$ Profit/Loss: " + str(round(balanceTrack[i] * ((sells[i]-buys[i])/buys[i]*leverage),1)) + "$ Percentage: " + str(round((sells[i]-buys[i])/buys[i]*100*leverage,1)) + "% Balance: " + str(round(balanceAfterSells[i])) + "$.")
         
