@@ -282,11 +282,8 @@ if(calculateButton):
     chartDataframe = pd.DataFrame(list(zip(prices, ema1b, ema2b, ema1s, ema2s)),
                columns =['Price', 'Buy ema 1', 'Buy ema 2', 'Sell ema 1', 'Sell ema 2'])
     
-    
     st.line_chart(pricesInRange)
-    #st.write(chartDataframe)
     st.line_chart(pandl)
-    #st.write(df)
     st.line_chart(balanceTrack)
     
     st.write("#### Starting balance: " + str(round(startingBalance)) + "$.")
@@ -294,14 +291,6 @@ if(calculateButton):
     st.write("#### Profit: " + str(round(balanceTrack[-1]-startingBalance)) + "$.")
     st.write("#### Profit(%): " + str(round((balanceTrack[-1]-startingBalance)/startingBalance*100,1)) + "%.")
     st.write("#### Change: "+ str(round(balanceTrack[-1]/startingBalance,1)) + "x")
-    
-    #profit = balanceTrack[-1]-startingBalance
-    #percentage = (balanceTrack[-1]-startingBalance)/startingBalance
-    
-    #st.write("#### Money compounded 1y: " + str(startingBlanace*((1+percentage)**(365/testingRange))))
-    
-    #st.write(df.index[0])
-    
     
     
     for i in range(len(balanceAfterSells)):
