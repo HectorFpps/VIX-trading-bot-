@@ -257,7 +257,7 @@ if(calculateButton):
     
     st.write("#### Starting balance: " + str(startingBalance))
     st.write("#### End balance: " + str(balanceTrack[-1])
-    st.write("#### Profit: " + str(balanceTrack[-1]-startingBalance)))
+    st.write("#### Profit: " + str(balanceTrack[-1]-startingBalance))
     
 
 
