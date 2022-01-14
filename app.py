@@ -278,21 +278,21 @@ calculateButton = st.button("Calculate")
 if(calculateButton):
     trade()
     
-    if not useEmaBuy:
-        for i in range(len(ema1b)):
-            ema1b[i] = [0]
-         
-    if not useEmaSell:
-        for i in range(len(ema1s)):
-            ema1s[i] = [0]
-         
-    if not useTwoEmaBuy:
-        for i in range(len(ema2b)):
-            ema2b[i] = [0]
-            
-    if not useTwoEmaSell:
-        for i in range(len(ema2s)):
-            ema2s[i] = [0]
+    #if not useEmaBuy:
+    #    for i in range(len(ema1b)):
+    #        ema1b[i] = [0]
+    #     
+    #if not useEmaSell:
+    #    for i in range(len(ema1s)):
+    #        ema1s[i] = [0]
+    #     
+    #if not useTwoEmaBuy:
+    #    for i in range(len(ema2b)):
+    #        ema2b[i] = [0]
+    #        
+    #if not useTwoEmaSell:
+    #    for i in range(len(ema2s)):
+    #        ema2s[i] = [0]
             
     #resultDataframe = pd.DataFrame(list(zip(prices, rsi, ema1b, ema2b, ema1s, ema2s)),
     #           columns =['Price', 'Rsi' , 'Buy ema 1', 'Buy ema 2', 'Sell ema 1', 'Sell ema 2'])
