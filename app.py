@@ -282,8 +282,9 @@ if(calculateButton):
     chartDataframe = pd.DataFrame(list(zip(prices, ema1b, ema2b, ema1s, ema2s)),
                columns =['Price', 'Buy ema 1', 'Buy ema 2', 'Sell ema 1', 'Sell ema 2'])
     
+    
     st.line_chart(pricesInRange)
-    st.write(chartDataframe)
+    #st.write(chartDataframe)
     st.line_chart(pandl)
     #st.write(df)
     st.line_chart(balanceTrack)
