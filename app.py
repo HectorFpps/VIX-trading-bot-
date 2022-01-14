@@ -160,6 +160,8 @@ def trade():
     sellprice = None
     inPosition = False
     balance = startingBalance
+    pandl = []
+    pandl += [balance]
     for i in range(len(prices)-testingRange,len(prices)):
     #for i in range(len(prices)):
         pricesInRange += [prices[i]]
@@ -168,15 +170,19 @@ def trade():
                 buyPrice = prices[i]
                 buys += [buyPrice]
                 inPosition = True
-
+                        
+                
         if inPosition:
+            pandl += balance * (prices[i]-buyPrice)/buyPrice*leverage
             if(rsi[i] > rsiSell) and (prices[i] > (ema1s[i]+sellOverNumber1)) and (prices[i] > (ema2s[i]+sellOverNumber2)):
                 sellPrice = prices[i]
                 sells += [sellPrice]
                 inPosition = False
                 balance += balance * (sellPrice-buyPrice)/buyPrice*leverage
                 balanceAfterSells += [balance]
-
+                
+        
+        
         balanceTrack += [balance]
     
 #--------------------------------------------------------------------------------------------------------------------------------------------------
@@ -254,6 +260,7 @@ calculateButton = st.button("Calculate")
 if(calculateButton):
     trade()
     st.line_chart(pricesInRange)
+    st.line_chart(pandl)
     #st.write(df)
     st.line_chart(balanceTrack)
     
