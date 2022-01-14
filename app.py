@@ -305,7 +305,7 @@ if(calculateButton):
     if not useTwoEmaBuy:
         for i in range(len(ema2b)):
             ema2b[i] = 0
-            
+    st.write(useTwoEmaBuy)
     if not useTwoEmaSell:
         for i in range(len(ema2s)):
             ema2s[i] = 0
