@@ -164,7 +164,7 @@ def trade():
     sellprice = None
     inPosition = False
     balance = startingBalance
-    now = none
+    now = None
     
     for i in range(len(prices)-testingRange,len(prices)):
     #for i in range(len(prices)):
