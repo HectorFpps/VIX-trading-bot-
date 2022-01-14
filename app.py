@@ -44,6 +44,7 @@ ema1s = []
 ema2s = []
 balanceTrack = []
 balanceAfterSells = []
+pandl = []
 
 ############################
 df = pd.DataFrame()
@@ -153,6 +154,7 @@ def trade():
     global pricesInRange
     global testingRange
     global startingBalance
+    global pandl
     
     calculate()
     
@@ -160,8 +162,7 @@ def trade():
     sellprice = None
     inPosition = False
     balance = startingBalance
-    pandl = []
-    pandl += [balance]
+    
     for i in range(len(prices)-testingRange,len(prices)):
     #for i in range(len(prices)):
         pricesInRange += [prices[i]]
