@@ -289,7 +289,7 @@ df = df.ta.ticker(ticker, period=chartPeriod, interval=interval)
 for i in range(len(df)):
     dates += [df.index[i]]
     
-st.markdown(f'<p style="background-color:#0066cc;color:#33ff33;font-size:24px;border-radius:2%;">"Hello"</p>', unsafe_allow_html=True)
+st.markdown(f'<p style="color:#33ff33;">Hello</p>', unsafe_allow_html=True)
 
 calculateButton = st.button("Calculate")
 
