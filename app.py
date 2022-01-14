@@ -19,7 +19,7 @@ buys = []
 sells = []
 ticker = "^VIX"
 testingRange = 30
-startingBalance = 20000
+startingBalance = 10000
 liquidated = False
 
 #conditions
@@ -258,6 +258,7 @@ if(useRsiSell and useEmaSell):
 
 st.write("### Necesari data")    
 leverage = st.slider("How much leveradge for your trades?", min_value = 1, max_value = 10)
+startingBalance = st.number_input("Starting balance: ", value = 10000, step = 10000)
 if(useRsiBuy or useRsiSell):
     rsiPeriod = st.number_input("What is the desired rsi period for the buy and sell rsi", value = 14, step = 2)
 
