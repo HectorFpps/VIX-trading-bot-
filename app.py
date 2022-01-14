@@ -280,7 +280,7 @@ if(useRsiSell and useEmaSell):
     st.warning("Please keep in mind it will only sell if both conditions are satisfide")
 
 st.write("### Necesari data")    
-leverage = st.slider("How much leveradge for your trades?", max_value = 10)
+leverage = st.slider("How much leveradge for your trades?", max_value = 10, step = 0.5)
 startingBalance = st.number_input("Starting balance: ", value = 10000, step = 10000)
 if(useRsiBuy or useRsiSell):
     rsiPeriod = st.number_input("What is the desired rsi period for the buy and sell rsi", value = 14, step = 2)
