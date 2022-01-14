@@ -45,7 +45,9 @@ balanceTrack = []
 balanceAfterSells = []
 
 ############################
+time.sleep(1)
 df = pd.DataFrame()
+time.sleep(1)
 df = df.ta.ticker(ticker, period=chartPeriod, interval=interval)
 st.write(df)
 ############################
