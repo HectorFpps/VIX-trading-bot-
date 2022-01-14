@@ -113,30 +113,34 @@ def calculate():
         rsiSell = 0
     price(prices, df)
     RSI(rsi, df)
+    
+    EMA1B(ema1b, df)
+    EMA2B(ema2b, df)
+    EMA1S(ema1s, df)
+    EMA2S(ema2s, df)
+    
     if useEmaBuy:
-        EMA1B(ema1b, df)
         if useTwoEmaBuy:
-            EMA2B(ema2b, df)
+            pass
         else:
             for i in range(len(prices)):
-                ema2b += [1000000]
+                ema2b = [1000000]
                 
     else:
         for i in range(len(prices)):
-            ema1b += [1000000]
-            ema2b += [1000000]
+            ema1b = [1000000]
+            ema2b = [1000000]
             
     if useEmaSell:
-        EMA1S(ema1s, df)
         if useTwoEmaSell:
-            EMA2S(ema2s, df)
+            pass
         else:
             for i in range(len(prices)):
-                ema2s += [0]
+                ema2s = [0]
     else:
         for i in range(len(prices)):
-            ema1s += [0]
-            ema2s += [0]
+            ema1s = [0]
+            ema2s = [0]
     
     
 def trade():
