@@ -47,7 +47,7 @@ balanceAfterSells = []
 ############################
 df = pd.DataFrame()
 df = df.ta.ticker(ticker, period=chartPeriod, interval=interval)
-st.write(df[-1][3])
+st.write(df[600*24][3])
 ############################
 
 def price(prices, df):
