@@ -283,7 +283,7 @@ if(calculateButton):
                columns =['Price', 'Buy ema 1', 'Buy ema 2', 'Sell ema 1', 'Sell ema 2'])
     
     st.line_chart(pricesInRange)
-    st.line_chart(chartDataframe)
+    st.write(chartDataframe)
     st.line_chart(pandl)
     #st.write(df)
     st.line_chart(balanceTrack)
@@ -302,7 +302,6 @@ if(calculateButton):
     #st.write(df.index[0])
     
     
-    st.write(resultDataframe)
     
     for i in range(len(balanceAfterSells)):
         st.write("Date: " + str(datesBuys[i]) + " Trade number " + str(i+1) + ": Buy: " + str(round(buys[i],1)) + "$ Sell: " + str(round(sells[i],1)) + "$ Profit/Loss: " + str(round(balanceTrack[i] * ((sells[i]-buys[i])/buys[i]*leverage),1)) + "$ Percentage: " + str(round((sells[i]-buys[i])/buys[i]*100*leverage,1)) + "% Balance: " + str(round(balanceAfterSells[i])) + "$.")
