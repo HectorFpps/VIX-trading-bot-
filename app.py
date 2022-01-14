@@ -47,6 +47,8 @@ ema2s = []
 balanceTrack = []
 balanceAfterSells = []
 pandl = []
+dates = []
+datesBuys = []
 
 ############################
 df = pd.DataFrame()
@@ -56,6 +58,7 @@ def price(prices, df):
     df = df.values.tolist()
     for i in range(len(df)):
         prices += [df[i][3]]
+        dates += [df[i][0]]
         
 
 def RSI(rsi, df):
@@ -157,6 +160,8 @@ def trade():
     global testingRange
     global startingBalance
     global pandl
+    global dates
+    global datesBuys
     
     calculate()
     
@@ -184,6 +189,7 @@ def trade():
                 sells += [sellPrice]
                 inPosition = False
                 balance += balance * (sellPrice-buyPrice)/buyPrice*leverage
+                datesBuys += [dates[i]]
                 balanceAfterSells += [balance]
         
         if now <= 0:
