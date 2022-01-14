@@ -318,6 +318,8 @@ if(calculateButton):
     st.line_chart(pandl)
     st.line_chart(balanceTrack)
     
+    
+    st.write("#### Making trades from: "+ dates[len(prices)-testingRange] + " to " + dates[len(prices)-1)
     st.write("#### Starting balance: " + str(round(startingBalance)) + "$.")
     st.write("#### End balance: " + str(round(balanceTrack[-1])) + "$.")
     st.write("#### Profit: " + str(round(balanceTrack[-1]-startingBalance)) + "$.")
