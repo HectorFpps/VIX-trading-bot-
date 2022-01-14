@@ -337,7 +337,10 @@ if(calculateButton):
     
     for i in range(len(balanceAfterSells)):
         text = "Date: " + str(datesBuys[i]) + " Trade number " + str(i+1) + ": Buy: " + str(round(buys[i],1)) + "$ Sell: " + str(round(sells[i],1)) + "$ Profit/Loss: " + str(round(balanceTrack[i] * ((sells[i]-buys[i])/buys[i]*leverage),1)) + "$ Percentage: " + str(round((sells[i]-buys[i])/buys[i]*100*leverage,1)) + "% Balance: " + str(round(balanceAfterSells[i])) + "$."
-        st.markdown(f'<p style="color:#33ff33;">{text}</p>', unsafe_allow_html=True)
+        if buy[i] < sell[i]:
+            st.markdown(f'<p style="color:#006400;">{text}</p>', unsafe_allow_html=True)
+        else:
+            st.markdown(f'<p style="color:#8b0000;">{text}</p>', unsafe_allow_html=True)	
         
     
     
