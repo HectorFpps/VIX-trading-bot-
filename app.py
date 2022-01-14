@@ -278,19 +278,19 @@ if(calculateButton):
     
     if not useEmaBuy:
         for i in range(len(ema1b)):
-            ema1b[i] = [1]
+            ema1b[i] = ["h"]
          
     if not useEmaSell:
         for i in range(len(ema1s)):
-            ema1s[i] = [1]
+            ema1s[i] = ["h"]
          
     if not useTwoEmaBuy:
         for i in range(len(ema2b)):
-            ema2b[i] = [1]
+            ema2b[i] = ["h"]
             
     if not useTwoEmaSell:
         for i in range(len(ema2s)):
-            ema2s[i] = [1]
+            ema2s[i] = ["g"]
             
     #resultDataframe = pd.DataFrame(list(zip(prices, rsi, ema1b, ema2b, ema1s, ema2s)),
     #           columns =['Price', 'Rsi' , 'Buy ema 1', 'Buy ema 2', 'Sell ema 1', 'Sell ema 2'])
