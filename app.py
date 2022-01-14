@@ -186,7 +186,7 @@ def trade():
                 balance += balance * (sellPrice-buyPrice)/buyPrice*leverage
                 balanceAfterSells += [balance]
         
-        if new <= 0:
+        if now <= 0:
             balance = 0
             
         pandl += [new] 
