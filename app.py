@@ -250,7 +250,7 @@ calculateButton = st.button("Calculate")
 if(calculateButton):
     trade()
     st.line_chart(pricesInRange)
-    st.write(df)
+    #st.write(df)
     st.line_chart(balanceTrack)
     
     st.write(prices[-1])
