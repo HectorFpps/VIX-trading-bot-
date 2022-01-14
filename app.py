@@ -189,7 +189,7 @@ def trade():
         if now <= 0:
             balance = 0
             
-        pandl += [new] 
+        pandl += [now] 
         
         balanceTrack += [balance]
     
