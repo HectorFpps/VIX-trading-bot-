@@ -193,7 +193,7 @@ def trade():
         ema2sInRange += [ema2s[i]]
         if not inPosition:
             now = balance
-            if(rsi[i] < rsiBuy) and (prices[i] < (ema1b[i]) and (prices[i] < ema2b[i])):
+            if rsi[i] < rsiBuy and prices[i] < ema1b[i] and prices[i] < ema2b[i]:
                 buyPrice = prices[i]
                 buys += [buyPrice]
                 inPosition = True
@@ -201,7 +201,7 @@ def trade():
                 
         if inPosition:
             now = balance+(balance * (prices[i]-buyPrice)/buyPrice*leverage)
-            if(rsi[i] > rsiSell) and (prices[i] > (ema1s[i])) and (prices[i] > (ema2s[i])):
+            if rsi[i] > rsiSell and prices[i] > ema1s[i] and prices[i] > ema2s[i]:
                 sellPrice = prices[i]
                 sells += [sellPrice]
                 inPosition = False
