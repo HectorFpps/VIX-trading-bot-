@@ -32,6 +32,7 @@ sellOverNumber1 = 0
 sellOverNumber2 = 0
 buyUnderNumber1 = 0
 buyUnderNumber2 = 0
+leverage = 1
 
 #Market data
 prices = []
@@ -173,7 +174,7 @@ def trade():
                 sellPrice = prices[i]
                 sells += [sellPrice]
                 inPosition = False
-                balance = balance*sellPrice/buyPrice
+                balance += balance * sellPrice/buyPrice*leveradge
                 balanceAfterSells += [balance]
 
         balanceTrack += [balance]
