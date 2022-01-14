@@ -261,7 +261,7 @@ if(calculateButton):
     st.write("#### Profit(%): " + str(round((balanceTrack[-1]-startingBalance)/startingBalance*100,1)))
     
     profit = balanceTrack[-1]-startingBalance
-    percentage = balanceTrack[-1]-startingBalance)/startingBalance
+    percentage = (balanceTrack[-1]-startingBalance)/startingBalance
     
     st.write("#### Money compounded 1y: " + str(round(startingBlanace*(1+percentage)**(365/testingRange) )))
     
