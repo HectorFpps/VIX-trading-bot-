@@ -59,7 +59,7 @@ def price(prices, df):
     df = df.values.tolist()
     for i in range(len(df)):
         prices += [df[i][3]]
-        dates += [df[i][-1]]
+        dates += [df[i][0]]
         
 
 def RSI(rsi, df):
@@ -291,7 +291,17 @@ if(calculateButton):
     #percentage = (balanceTrack[-1]-startingBalance)/startingBalance
     
     #st.write("#### Money compounded 1y: " + str(startingBlanace*((1+percentage)**(365/testingRange))))
-
+    
+    for i in range(len(df)):
+        st.write(df[i][0])
+        st.write(df[i][1])
+        st.write(df[i][2])
+        st.write(df[i][3])
+        st.write(df[i][4])
+        st.write(df[i][5])
+        st.write(df[i][6])
+        st.write(df[i][7])
+        st.write(df[i][8])
     
     for i in range(len(balanceAfterSells)):
         st.write("Date: " + str(datesBuys[i]) + " Trade number " + str(i+1) + ": Buy: " + str(round(buys[i],1)) + "$ Sell: " + str(round(sells[i],1)) + "$ Profit/Loss: " + str(round(balanceTrack[i] * ((sells[i]-buys[i])/buys[i]*leverage),1)) + "$ Percentage: " + str(round((sells[i]-buys[i])/buys[i]*100*leverage,1)) + "% Balance: " + str(round(balanceAfterSells[i])) + "$.")
