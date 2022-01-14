@@ -174,7 +174,7 @@ def trade():
                 sellPrice = prices[i]
                 sells += [sellPrice]
                 inPosition = False
-                balance += balance * sellPrice/buyPrice*leverage
+                balance += balance * (sellPrice-buyPrice)/buyPrice*leverage
                 balanceAfterSells += [balance]
 
         balanceTrack += [balance]
