@@ -297,8 +297,8 @@ if(calculateButton):
     #resultDataframe = pd.DataFrame(list(zip(prices, rsi, ema1b, ema2b, ema1s, ema2s)),
     #           columns =['Price', 'Rsi' , 'Buy ema 1', 'Buy ema 2', 'Sell ema 1', 'Sell ema 2'])
     
-    #chartDataframe = pd.DataFrame(list(zip(prices, ema1b, ema2b, ema1s, ema2s)),
-    #           columns =['Price', 'Buy ema 1', 'Buy ema 2', 'Sell ema 1', 'Sell ema 2'])
+    chartDataframe = pd.DataFrame(list(zip(prices, ema1b, ema2b, ema1s, ema2s)),
+               columns =['Price', 'Buy ema 1', 'Buy ema 2', 'Sell ema 1', 'Sell ema 2'])
     
     st.write(chartDataframe)
     st.line_chart(pricesInRange)
