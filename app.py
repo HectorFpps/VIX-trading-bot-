@@ -199,9 +199,9 @@ testingRange = st.slider("How many days shoud the strategy test?", min_value = 2
 multi = int(interval[:-1])
 
 if "m" in interval:
-    testingRange *= (6*60*multi)
+    testingRange *= (7*60*multi)
 else:
-    testingRange *= multi*6
+    testingRange *= multi*7
 
 st.write("### Buy Condition")
 
