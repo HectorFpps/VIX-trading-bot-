@@ -19,6 +19,7 @@ buys = []
 sells = []
 ticker = "^VIX"
 testingRange = 30
+startingBalance = 10000
 
 #conditions
 useRsiBuy = False
@@ -150,13 +151,14 @@ def trade():
     global balanceAfterSells
     global pricesInRange
     global testingRange
+    global startingBalance
     
     calculate()
     
     buyPrice = None
     sellprice = None
     inPosition = False
-    balance = 10000
+    balance = startingBalance
     for i in range(len(prices)-testingRange,len(prices)):
     #for i in range(len(prices)):
         pricesInRange += [prices[i]]
@@ -253,5 +255,7 @@ if(calculateButton):
     #st.write(df)
     st.line_chart(balanceTrack)
     
-    st.write(prices[-1])
+    st.write("#### Starting balance: " + str(startingBalance) + " end balance: " + str(balanceTrack[-1]) + " profit: " + str(balanceTrack[-1]-startingBalance))
+    
+
 
