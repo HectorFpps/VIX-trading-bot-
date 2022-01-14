@@ -19,7 +19,7 @@ buys = []
 sells = []
 ticker = "^VIX"
 testingRange = 30
-startingBalance = 10000
+startingBalance = 20000
 
 #conditions
 useRsiBuy = False
@@ -33,6 +33,7 @@ sellOverNumber2 = 0
 buyUnderNumber1 = 0
 buyUnderNumber2 = 0
 leverage = 1
+
 
 #Market data
 prices = []
