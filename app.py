@@ -166,6 +166,7 @@ def trade():
     #for i in range(len(prices)):
         pricesInRange += [prices[i]]
         if not inPosition:
+            pandl += [balance]
             if(rsi[i] < rsiBuy) and (prices[i] < (ema1b[i]-buyUnderNumber1)) and (prices[i] < (ema2b[i]-buyUnderNumber2)):
                 buyPrice = prices[i]
                 buys += [buyPrice]
@@ -173,7 +174,7 @@ def trade():
                         
                 
         if inPosition:
-            pandl += balance * (prices[i]-buyPrice)/buyPrice*leverage
+            pandl += [balance * (prices[i]-buyPrice)/buyPrice*leverage]
             if(rsi[i] > rsiSell) and (prices[i] > (ema1s[i]+sellOverNumber1)) and (prices[i] > (ema2s[i]+sellOverNumber2)):
                 sellPrice = prices[i]
                 sells += [sellPrice]
