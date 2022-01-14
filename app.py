@@ -277,22 +277,18 @@ if(calculateButton):
     trade()
     
     if not useEmaBuy:
-        st.write("Not using ema buy")
         for i in range(len(ema1b)):
             ema1b[i] = [0]
          
     if not useEmaSell:
-        st.write("Not using ema sell")
         for i in range(len(ema1s)):
             ema1s[i] = [0]
          
     if not useTwoEmaBuy:
-        st.write("Not using second ema buy")
         for i in range(len(ema2b)):
             ema2b[i] = [0]
             
     if not useTwoEmaSell:
-        st.write("Not using second ema sell")
         for i in range(len(ema2s)):
             ema2s[i] = [0]
             
@@ -304,7 +300,7 @@ if(calculateButton):
     
     st.write(chartDataframe)
     st.line_chart(pricesInRange)
-    #st.line_chart(chartDataframe)
+    st.line_chart(chartDataframe)
     st.line_chart(pandl)
     st.line_chart(balanceTrack)
     
