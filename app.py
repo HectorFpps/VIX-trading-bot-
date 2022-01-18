@@ -102,6 +102,7 @@ def EMA2S(ema2s, df):
     for i in range(len(df)):
         ema2s += [df[i]+sellOverNumber2]
         
+
         
 def calculate():
     global rsiBuy
