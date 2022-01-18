@@ -100,7 +100,7 @@ def EMA2S(ema2s, df):
     df = df.values.tolist()
     
     for i in range(len(df)):
-        ema2s += [df[i]+sellOverNumber2]
+        ema2s += [df[i]+sellOverNumber]
         
         
 def calculate():
